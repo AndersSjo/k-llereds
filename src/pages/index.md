@@ -39,6 +39,7 @@ mainpitch:
         privatperson är ni givetvis välkomna att höra av er med en förfrågan till oss, vi hinner dock endast
 
         med ett fåtal sådana projekt om året.
+  test: rwa
 description: Kaldi is the ultimate spot for coffee lovers who want to learn
   about their java’s origin and support the farmers that grew it. We take coffee
   production, roasting and brewing seriously and we’re glad to pass that

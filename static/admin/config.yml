@@ -57,7 +57,6 @@ collections:
                 [
                   { label: Title, name: title, widget: string },
                   { label: Description, name: description, widget: text },
-                  { label: Test, name: test, widget: text },
                   {
                     label: "Beskrivning",
                     name: "beskrivning",
@@ -66,25 +65,15 @@ collections:
                   },
                 ],
             }
-          - { label: Description, name: description, widget: string }
           - {
-              label: Intro,
-              name: intro,
+              label: Historia,
+              name: historia,
               widget: object,
               fields:
                 [
-                  { label: Heading, name: heading, widget: string },
-                  { label: Description, name: description, widget: text },
-                  {
-                    label: Blurbs,
-                    name: blurbs,
-                    widget: list,
-                    fields:
-                      [
-                        { label: Image, name: image, widget: image },
-                        { label: Text, name: text, widget: text },
-                      ],
-                  },
+                  { label: Rubrik, name: rubrik, widget: string },
+                  { label: Text, name: text, widget: text },
+                  { label: Bild, name: bild, widget: image },
                 ],
             }
           - {

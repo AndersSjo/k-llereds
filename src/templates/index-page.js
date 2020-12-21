@@ -128,7 +128,7 @@ IndexPageTemplate.propTypes = {
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
-  console.log("data", data);
+  console.log("data", frontmatter.mainpitch);
   return (
     <Layout>
       <IndexPageTemplate
@@ -171,6 +171,7 @@ export const pageQuery = graphql`
         mainpitch {
           title
           description
+          test
         }
         description
         intro {

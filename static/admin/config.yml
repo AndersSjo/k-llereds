@@ -57,6 +57,7 @@ collections:
                 [
                   { label: Title, name: title, widget: string },
                   { label: Description, name: description, widget: text },
+                  { label: Test, name: test, widget: text },
                   {
                     label: "Beskrivning",
                     name: "beskrivning",

@@ -229,11 +229,11 @@ export const pageQuery = graphql`
           description
           test
         }
-        historia {
-          rubrik
-          text
-          bild
-        }
+        # historia {
+        #   rubrik
+        #   text
+        #   bild
+        # }
       }
     }
   }

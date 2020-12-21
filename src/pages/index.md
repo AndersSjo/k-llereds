@@ -21,6 +21,24 @@ mainpitch:
     privatperson är ni givetvis välkomna att höra av er med en förfrågan till oss, vi hinner dock endast
 
     med ett fåtal sådana projekt om året.
+  beskrivning:
+    - stycke: >-
+        Byggbolaget grundades 1983 och har sedan dess verkat inom
+        Göteborgs-regionen med omnejd
+
+        och hjälpt våra kunder med ny- och om-byggnationer, tillbyggnationer och renoveringar.
+    - stycke: Kombinationen av att vi kan åta oss större entreprenader samtidigt som
+        vi har en relativt platt organisation gör oss till ett
+        konkurrens-kraftigt alternativ både på de mindre som de större
+        entreprenaderna, skillnaden är att vi inte tar på oss flera stora
+        entreprenader samtidigt.
+    - stycke: >-
+        Bygg arbetar nästan uteslutande mot företag, kommuner och olika
+        institutioner. Som
+
+        privatperson är ni givetvis välkomna att höra av er med en förfrågan till oss, vi hinner dock endast
+
+        med ett fåtal sådana projekt om året.
 description: Kaldi is the ultimate spot for coffee lovers who want to learn
   about their java’s origin and support the farmers that grew it. We take coffee
   production, roasting and brewing seriously and we’re glad to pass that

@@ -92,7 +92,6 @@ export const IndexPageTemplate = ({
   mainpitch,
   historia,
   description,
-  intro,
 }) => (
   <div>
     <SplashImage
@@ -122,9 +121,9 @@ export const IndexPageTemplate = ({
                   <div className="tile">
                     <Title className="title">{mainpitch.title}</Title>
                   </div>
-                  {mainpitch.beskrivning.map((stycke) => {
+                  {mainpitch.beskrivning.map((stycke, i) => {
                     return (
-                      <div className="tile">
+                      <div className="tile" key={`${i}-desc`}>
                         <Paragraph center>{stycke.stycke}</Paragraph>
                       </div>
                     );
@@ -138,7 +137,6 @@ export const IndexPageTemplate = ({
                     <p>{description}</p>
                   </div>
                 </div>
-                <Features gridItems={intro.blurbs} />
                 <div className="columns">
                   <div className="column is-12 has-text-centered">
                     <Link className="btn" to="/products">
@@ -174,14 +172,11 @@ IndexPageTemplate.propTypes = {
   mainpitch: PropTypes.object,
   description: PropTypes.string,
   historia: PropTypes.object,
-  intro: PropTypes.shape({
-    blurbs: PropTypes.array,
-  }),
 };
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
-  console.log("data", frontmatter.mainpitch);
+  console.log("data", frontmatter.historia);
   return (
     <Layout>
       <IndexPageTemplate
@@ -191,7 +186,6 @@ const IndexPage = ({ data }) => {
         subheading={frontmatter.subheading}
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
-        intro={frontmatter.intro}
       />
     </Layout>
   );
@@ -229,11 +223,19 @@ export const pageQuery = graphql`
           description
           test
         }
-        # historia {
-        #   rubrik
-        #   text
-        #   bild
-        # }
+        historia {
+          rubrik
+          text {
+            stycke
+          }
+          bild {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
       }
     }
   }

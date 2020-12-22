@@ -1,7 +1,7 @@
 ---
 templateKey: index-page
 title: GEDIGET HANTVERK
-image: /img/home-jumbotron.jpg
+image: /img/siarhei-plashchynski-6orpnpqmtao-unsplash.jpg
 heading: Great coffee with a conscience
 subheading: – SEDAN 1983
 mainpitch:

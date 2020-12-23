@@ -40,6 +40,43 @@ mainpitch:
 
         med ett fåtal sådana projekt om året.
   test: rwa
+personer:
+  rubrik: VILKA VI ÄR
+  text:
+    - stycke: Detta är vi som arbetar här
+  bild:
+    - namn: Patrik Ehrenborg
+      titel: VD / Arbetsledare
+      fax: 031 - 795 40 50
+      telefon: 031 - 795 40 55
+      mail: patrik.ehrenborg@kalleredsbygg.se
+      bild: /img/arbetare1.png
+    - namn: Patrik Ehrenborg
+      titel: VD / Arbetsledare
+      telefon: 031 - 795 40 55
+      fax: 031 - 795 40 50
+      mail: patrik.ehrenborg@kalleredsbygg.se
+      bild: /img/arbetare2.png
+    - namn: Patrik Ehrenborg
+      titel: VD / Arbetsledare
+      telefon: 031 - 795 40 55
+      fax: 031 - 795 40 50
+      mail: patrik.ehrenborg@kalleredsbygg.se
+      bild: /img/arbetare3.png
+    - namn: Patrik Ehrenborg
+      titel: VD / Arbetsledare
+      telefon: 031 - 795 40 55
+      fax: 031 - 795 40 50
+      mail: patrik.ehrenborg@kalleredsbygg.se
+      bild: /img/arbetare4.png
+kontakt:
+  rubrik: KONTAKTA OSS
+  text:
+    - stycke: Söker ni nya lokaler?
+    - stycke: |-
+        Välkommen att kontakta oss via kontaktuppgifterna
+        nedan eller kontaktformuläret till höger.
+  bild: /img/spencer-davis-svfxlchg9hi-unsplash.jpg
 intro:
   blurbs:
     - image: /img/coffee.png
@@ -75,6 +112,26 @@ intro:
     java’s origin and support the farmers that grew it. We take coffee
     production, roasting and brewing seriously and we’re glad to pass that
     knowledge to anyone. This is an edit via identity...
+main:
+  heading: Great coffee with no compromises
+  description: >
+    We hold our coffee to the highest standards from the shrub to the cup.
+    That’s why we’re meticulous and transparent about each step of the coffee’s
+    journey. We personally visit each farm to make sure the conditions are
+    optimal for the plants, farmers and the local environment.
+  image1:
+    alt: A close-up of a paper filter filled with ground coffee
+    image: /img/products-grid3.jpg
+  image2:
+    alt: A green cup of a coffee on a wooden table
+    image: /img/products-grid2.jpg
+  image3:
+    alt: Coffee beans
+    image: /img/products-grid1.jpg
+description: Kaldi is the ultimate spot for coffee lovers who want to learn
+  about their java’s origin and support the farmers that grew it. We take coffee
+  production, roasting and brewing seriously and we’re glad to pass that
+  knowledge to anyone.
 historia:
   rubrik: VÅR HISTORIA
   text:
@@ -99,24 +156,4 @@ historia:
     - stycke: Sedan 2018 är koncernen splittrad och Kållereds Bygg AB drivs idag av
         Patrik Ehrenborg tillsammans med 3 st delägare.
   bild: /img/greyson-joralemon-cxlls8jm1vi-unsplash.jpg
-main:
-  heading: Great coffee with no compromises
-  description: >
-    We hold our coffee to the highest standards from the shrub to the cup.
-    That’s why we’re meticulous and transparent about each step of the coffee’s
-    journey. We personally visit each farm to make sure the conditions are
-    optimal for the plants, farmers and the local environment.
-  image1:
-    alt: A close-up of a paper filter filled with ground coffee
-    image: /img/products-grid3.jpg
-  image2:
-    alt: A green cup of a coffee on a wooden table
-    image: /img/products-grid2.jpg
-  image3:
-    alt: Coffee beans
-    image: /img/products-grid1.jpg
-description: Kaldi is the ultimate spot for coffee lovers who want to learn
-  about their java’s origin and support the farmers that grew it. We take coffee
-  production, roasting and brewing seriously and we’re glad to pass that
-  knowledge to anyone.
 ---

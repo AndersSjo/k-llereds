@@ -106,6 +106,279 @@ collections:
                   { label: Bild, name: bild, widget: image },
                 ],
             }
+      - file: "src/pages/byggservice/index.md"
+        label: "Byggservice"
+        name: "byggservice"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "byggservice-page",
+            }
+          - { label: Title, name: title, widget: string }
+          - { label: Image, name: image, widget: image }
+          - { label: Heading, name: heading, widget: string }
+          - { label: Subheading, name: subheading, widget: string }
+          - {
+              label: Mainpitch,
+              name: mainpitch,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  { label: Description, name: description, widget: text },
+                  {
+                    label: "Beskrivning",
+                    name: "beskrivning",
+                    widget: list,
+                    fields: [{ label: Stycke, name: stycke, widget: text }],
+                  },
+                ],
+            }
+          - {
+              label: Historia,
+              name: historia,
+              widget: object,
+              fields:
+                [
+                  { label: Rubrik, name: rubrik, widget: string },
+                  {
+                    label: Text,
+                    name: text,
+                    widget: list,
+                    fields: [{ label: Stycke, name: stycke, widget: text }],
+                  },
+                  { label: Bild, name: bild, widget: image },
+                ],
+            }
+          - {
+              label: Personser,
+              name: personer,
+              widget: object,
+              fields:
+                [
+                  { label: Rubrik, name: rubrik, widget: string },
+                  {
+                    label: Text,
+                    name: text,
+                    widget: list,
+                    fields: [{ label: Stycke, name: stycke, widget: text }],
+                  },
+                  {
+                    label: Bild,
+                    name: bild,
+                    widget: list,
+                    fields:
+                      [
+                        { label: Namn, name: namn, widget: text },
+                        { label: Titel, name: titel, widget: text },
+                        { label: Telefon, name: telefon, widget: text },
+                        { label: Fax, name: fax, widget: text },
+                        { label: Mail, name: mail, widget: text },
+                        { label: Bild, name: bild, widget: image },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: Kontakt,
+              name: kontakt,
+              widget: object,
+              fields:
+                [
+                  { label: Rubrik, name: rubrik, widget: string },
+                  {
+                    label: Text,
+                    name: text,
+                    widget: list,
+                    fields: [{ label: Stycke, name: stycke, widget: text }],
+                  },
+                  { label: Bild, name: bild, widget: image },
+                ],
+            }
+      - file: "src/pages/bygg/index.md"
+        label: "Bygg"
+        name: "bygg"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "bygg-page",
+            }
+          - { label: Title, name: title, widget: string }
+          - { label: Image, name: image, widget: image }
+          - { label: Heading, name: heading, widget: string }
+          - { label: Subheading, name: subheading, widget: string }
+          - {
+              label: Mainpitch,
+              name: mainpitch,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  { label: Description, name: description, widget: text },
+                  {
+                    label: "Beskrivning",
+                    name: "beskrivning",
+                    widget: list,
+                    fields: [{ label: Stycke, name: stycke, widget: text }],
+                  },
+                ],
+            }
+          - {
+              label: Historia,
+              name: historia,
+              widget: object,
+              fields:
+                [
+                  { label: Rubrik, name: rubrik, widget: string },
+                  {
+                    label: Text,
+                    name: text,
+                    widget: list,
+                    fields: [{ label: Stycke, name: stycke, widget: text }],
+                  },
+                  { label: Bild, name: bild, widget: image },
+                ],
+            }
+          - {
+              label: Personser,
+              name: personer,
+              widget: object,
+              fields:
+                [
+                  { label: Rubrik, name: rubrik, widget: string },
+                  {
+                    label: Text,
+                    name: text,
+                    widget: list,
+                    fields: [{ label: Stycke, name: stycke, widget: text }],
+                  },
+                  {
+                    label: Bild,
+                    name: bild,
+                    widget: list,
+                    fields:
+                      [
+                        { label: Namn, name: namn, widget: text },
+                        { label: Titel, name: titel, widget: text },
+                        { label: Telefon, name: telefon, widget: text },
+                        { label: Fax, name: fax, widget: text },
+                        { label: Mail, name: mail, widget: text },
+                        { label: Bild, name: bild, widget: image },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: Kontakt,
+              name: kontakt,
+              widget: object,
+              fields:
+                [
+                  { label: Rubrik, name: rubrik, widget: string },
+                  {
+                    label: Text,
+                    name: text,
+                    widget: list,
+                    fields: [{ label: Stycke, name: stycke, widget: text }],
+                  },
+                  { label: Bild, name: bild, widget: image },
+                ],
+            }
+      - file: "src/pages/fastigheter/index.md"
+        label: "Fastigheter"
+        name: "fastigheter"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "fastigheter-page",
+            }
+          - { label: Title, name: title, widget: string }
+          - { label: Image, name: image, widget: image }
+          - { label: Heading, name: heading, widget: string }
+          - { label: Subheading, name: subheading, widget: string }
+          - {
+              label: Mainpitch,
+              name: mainpitch,
+              widget: object,
+              fields:
+                [
+                  { label: Title, name: title, widget: string },
+                  { label: Description, name: description, widget: text },
+                  {
+                    label: "Beskrivning",
+                    name: "beskrivning",
+                    widget: list,
+                    fields: [{ label: Stycke, name: stycke, widget: text }],
+                  },
+                ],
+            }
+          - {
+              label: Historia,
+              name: historia,
+              widget: object,
+              fields:
+                [
+                  { label: Rubrik, name: rubrik, widget: string },
+                  {
+                    label: Text,
+                    name: text,
+                    widget: list,
+                    fields: [{ label: Stycke, name: stycke, widget: text }],
+                  },
+                  { label: Bild, name: bild, widget: image },
+                ],
+            }
+          - {
+              label: Personser,
+              name: personer,
+              widget: object,
+              fields:
+                [
+                  { label: Rubrik, name: rubrik, widget: string },
+                  {
+                    label: Text,
+                    name: text,
+                    widget: list,
+                    fields: [{ label: Stycke, name: stycke, widget: text }],
+                  },
+                  {
+                    label: Bild,
+                    name: bild,
+                    widget: list,
+                    fields:
+                      [
+                        { label: Namn, name: namn, widget: text },
+                        { label: Titel, name: titel, widget: text },
+                        { label: Telefon, name: telefon, widget: text },
+                        { label: Fax, name: fax, widget: text },
+                        { label: Mail, name: mail, widget: text },
+                        { label: Bild, name: bild, widget: image },
+                      ],
+                  },
+                ],
+            }
+          - {
+              label: Kontakt,
+              name: kontakt,
+              widget: object,
+              fields:
+                [
+                  { label: Rubrik, name: rubrik, widget: string },
+                  {
+                    label: Text,
+                    name: text,
+                    widget: list,
+                    fields: [{ label: Stycke, name: stycke, widget: text }],
+                  },
+                  { label: Bild, name: bild, widget: image },
+                ],
+            }
       - file: "src/pages/startsida/index.md"
         label: "Startsida"
         name: "startsida"

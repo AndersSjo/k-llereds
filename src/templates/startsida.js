@@ -1,62 +1,250 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { graphql } from "gatsby";
+import { Link, graphql } from "gatsby";
+import styled from "styled-components";
+import Text from "../components/Text";
+
 import Layout from "../components/Layout";
-import Content, { HTMLContent } from "../components/Content";
 
-export const AboutPageTemplate4 = ({ title, content, contentComponent }) => {
-  const PageContent = contentComponent || Content;
+const Title = styled.div`
+  color: rgb(250, 223, 54);
+  line-height: 1;
+  padding: 0.25em;
+  font-size: 2.5em;
+  text-shadow: 6px 3px 7px rgba(57, 57, 57, 0.9);
+  font-weight: 900;
+  padding: 0;
+  text-align: center;
 
-  return (
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <div className="section">
-              <h2 className="title is-size-3 has-text-weight-bold is-bold-light">
-                {title}
-              </h2>
-              <PageContent className="content" content={content} />
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-  );
+  @media screen and (max-width: 1200px) {
+    font-size: 9.3vw;
+  }
+`;
+const SubTitle = styled.div`
+  color: rgb(250, 223, 54);
+  line-height: 1;
+  padding: 0.25em;
+  text-shadow: 6px 3px 7px rgba(57, 57, 57, 0.9);
+  font-size: 1.5em;
+  font-weight: 800;
+  text-align: center;
+  padding: 0;
+
+  @media screen and (max-width: 1200px) {
+    font-size: 5.3vw;
+  }
+`;
+const Centralizer = styled.div`
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+
+  ${(props) =>
+    props.row &&
+    `
+      flex-direction: row;
+    `}
+`;
+const SplashImage = styled.div`
+  width: 100vw;
+  height: 75vh;
+  background-size: cover;
+  background-position: bottom;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0 !important;
+  backgroundposition: top left;
+  backgroundattachment: fixed;
+  ${(props) =>
+    `
+      background-image: url(${props.url});
+    `}
+`;
+
+const Paragraph = styled.div`
+  padding-top: 40px;
+  font-size: 1.5em;
+  font-weight: 600;
+  color: rgb(30, 79, 86);
+  width: 100%;
+  ${(props) =>
+    props.center &&
+    `
+      text-align: center;
+    `}
+  ${(props) =>
+    props.white &&
+    `
+      color: white;
+    `}
+
+  @media screen and (max-width: 900px) {
+    font-size: 1em;
+  }
+`;
+
+const Button = styled.button`
+  background-color: rgb(32, 37, 43);
+  border-radius: 30px;
+  border-width: 0px;
+  cursor: pointer;
+  justify-content: center;
+  text-align: center;
+  padding: 15px 40px;
+  ${(props) =>
+    props.yellow &&
+    `
+      background-color: rgb(250, 223, 54);
+      color: rgb(35, 31, 32);
+    `}
+`;
+
+const Image = styled.div`
+  background-size: cover;
+  background-position: bottom;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  ${(props) =>
+    props.url &&
+    `
+      background-image: url(${props.url});
+    `}
+`;
+
+export const StartpageTemplate = ({
+  rubrik,
+  underrubrik,
+  venster,
+  center,
+  hoger,
+}) => (
+  <div>
+    <Centralizer style={{ position: "absolute", top: "100px" }}>
+      <Title>{rubrik}</Title>
+      <SubTitle>{underrubrik}</SubTitle>
+    </Centralizer>
+    <Centralizer row style={{ height: "100vh", width: "100vw" }}>
+      <Image
+        url={
+          !!venster.image.childImageSharp
+            ? venster.image.childImageSharp.fluid.src
+            : venster.image
+        }
+        style={{ width: "33.3%", flexDirection: "column" }}
+      >
+        <Title style={{ textShadow: "none", width: "250px", fontSize: "2em" }}>
+          {venster.text}
+        </Title>
+        <Button yellow style={{ fontWeight: "900", marginTop: "40px" }}>
+          LÄS MER
+        </Button>
+      </Image>
+      <Image
+        url={
+          !!center.image.childImageSharp
+            ? center.image.childImageSharp.fluid.src
+            : center.image
+        }
+        style={{ width: "33.3%", flexDirection: "column" }}
+      >
+        <Title style={{ textShadow: "none", width: "250px", fontSize: "2em" }}>
+          {center.text}
+        </Title>
+        <Button yellow style={{ fontWeight: "900", marginTop: "40px" }}>
+          LÄS MER
+        </Button>
+      </Image>
+      <Image
+        url={
+          !!hoger.image.childImageSharp
+            ? hoger.image.childImageSharp.fluid.src
+            : hoger.image
+        }
+        style={{ width: "33.3%", flexDirection: "column" }}
+      >
+        <Title style={{ textShadow: "none", width: "250px", fontSize: "2em" }}>
+          {hoger.text}
+        </Title>
+        <Button yellow style={{ fontWeight: "900", marginTop: "40px" }}>
+          LÄS MER
+        </Button>
+      </Image>
+    </Centralizer>
+  </div>
+);
+
+StartpageTemplate.propTypes = {
+  rubrik: PropTypes.string,
+  underrubrik: PropTypes.string,
+  venster: PropTypes.object,
+  center: PropTypes.object,
+  hoger: PropTypes.object,
 };
 
-AboutPageTemplate4.propTypes = {
-  title: PropTypes.string.isRequired,
-  content: PropTypes.string,
-  contentComponent: PropTypes.func,
-};
-
-const AboutPage = ({ data }) => {
-  const { markdownRemark: post } = data;
-
+const IndexPage = ({ data }) => {
+  const { frontmatter } = data.markdownRemark;
   return (
     <Layout>
-      <AboutPageTemplate4
-        contentComponent={HTMLContent}
-        title={post.frontmatter.title}
-        content={post.html}
+      <StartpageTemplate
+        rubrik={frontmatter.rubrik}
+        underrubrik={frontmatter.underrubrik}
+        venster={frontmatter.venster}
+        center={frontmatter.center}
+        hoger={frontmatter.hoger}
       />
     </Layout>
   );
 };
 
-AboutPage.propTypes = {
-  data: PropTypes.object.isRequired,
+IndexPage.propTypes = {
+  data: PropTypes.shape({
+    markdownRemark: PropTypes.shape({
+      frontmatter: PropTypes.object,
+    }),
+  }),
 };
 
-export default AboutPage;
+export default IndexPage;
 
-export const aboutPageQuery = graphql`
-  query AboutPage4($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      html
+export const pageQuery = graphql`
+  query StartpageTemplate {
+    markdownRemark(frontmatter: { templateKey: { eq: "startsida" } }) {
       frontmatter {
-        title
+        rubrik
+        underrubrik
+        venster {
+          text
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+        center {
+          text
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+        hoger {
+          text
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
       }
     }
   }

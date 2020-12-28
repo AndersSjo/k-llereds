@@ -10,9 +10,9 @@ const IndexPagePreview = ({ entry, getAsset }) => {
       <StartpageTemplate
         rubrik={data.rubrik}
         underrubrik={data.underrubrik}
-        left={data.left}
+        venster={data.venster}
         center={data.center}
-        right={data.right}
+        hoger={data.hoger}
       />
     );
   } else {

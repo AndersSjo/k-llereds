@@ -1,4 +1,5 @@
 ---
+templateKey: test
 rubrik: test
 underrubrik: test
 left:

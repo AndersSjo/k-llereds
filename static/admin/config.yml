@@ -354,6 +354,26 @@ collections:
                 ],
             }
           - {
+              label: "Hoger",
+              name: "hoger",
+              widget: object,
+              fields:
+                [
+                  { label: Image, name: image, widget: image },
+                  { label: Text, name: text, widget: string },
+                ],
+            }
+          - {
+              label: "Venster",
+              name: "venster",
+              widget: object,
+              fields:
+                [
+                  { label: Image, name: image, widget: image },
+                  { label: Text, name: text, widget: string },
+                ],
+            }
+          - {
               label: "Center",
               name: "center",
               widget: object,

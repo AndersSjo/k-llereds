@@ -181,36 +181,36 @@ export const pageQuery = graphql`
       frontmatter {
         rubrik
         underrubrik
-        left {
-          text
-          image {
-            childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-        center {
-          text
-          image {
-            childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
-        right {
-          text
-          image {
-            childImageSharp {
-              fluid(maxWidth: 2048, quality: 100) {
-                ...GatsbyImageSharpFluid
-              }
-            }
-          }
-        }
+        # left {
+        #   text
+        #   image {
+        #     childImageSharp {
+        #       fluid(maxWidth: 2048, quality: 100) {
+        #         ...GatsbyImageSharpFluid
+        #       }
+        #     }
+        #   }
+        # }
+        # center {
+        #   text
+        #   image {
+        #     childImageSharp {
+        #       fluid(maxWidth: 2048, quality: 100) {
+        #         ...GatsbyImageSharpFluid
+        #       }
+        #     }
+        #   }
+        # }
+        # right {
+        #   text
+        #   image {
+        #     childImageSharp {
+        #       fluid(maxWidth: 2048, quality: 100) {
+        #         ...GatsbyImageSharpFluid
+        #       }
+        #     }
+        #   }
+        # }
       }
     }
   }

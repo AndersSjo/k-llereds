@@ -1,6 +1,6 @@
 ---
 templateKey: startsida
-rubrik: GEDIGET HANTVERKr
+rubrik: GEDIGET HANTVERK
 underrubrik: – SEDAN 1983
 left:
   text: KÅLLEREDS BYGGSERVICE

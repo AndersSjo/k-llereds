@@ -11,4 +11,10 @@ center:
 right:
   image: /img/pierre-chatel-innocenti-zr2dp_icxlg-unsplash.jpg
   text: KÅLLEREDS FASTIGHETER
+venster:
+  image: /img/maxim-shklyaev-rthox_cst-q-unsplash.jpg
+  text: KÅLLEREDS BYGGSERVICE
+hoger:
+  image: /img/pierre-chatel-innocenti-zr2dp_icxlg-unsplash.jpg
+  text: KÅLLEREDS FASTIGHETER
 ---

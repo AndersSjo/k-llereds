@@ -1,22 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { IndexPageTemplate } from "../../templates/index-page";
+import { StartpageTemplate } from "../../templates/index-page";
 
 const IndexPagePreview = ({ entry, getAsset }) => {
   const data = entry.getIn(["data"]).toJS();
 
   if (data) {
     return (
-      <IndexPageTemplate
-        image={getAsset(data.image)}
-        title={data.title}
-        heading={data.heading}
-        subheading={data.subheading}
-        description={data.description}
-        beskrivning={data.beskrivning}
-        intro={data.intro || { blurbs: [] }}
-        mainpitch={data.mainpitch || {}}
-        historia={data.historia || {}}
+      <StartpageTemplate
+        rubrik={data.rubrik}
+        underrubrik={data.underrubrik}
+        left={data.left}
+        center={data.center}
+        right={data.beskrivning}
       />
     );
   } else {

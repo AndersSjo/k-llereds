@@ -84,7 +84,7 @@ const Paragraph = styled.div`
   }
 `;
 
-export const IndexPageTemplate = ({
+export const StartpageTemplate = ({
   image,
   title,
   heading,
@@ -129,7 +129,6 @@ export const IndexPageTemplate = ({
                     );
                   })}
                 </div>
-                
               </div>
             </div>
           </div>
@@ -139,7 +138,7 @@ export const IndexPageTemplate = ({
   </div>
 );
 
-IndexPageTemplate.propTypes = {
+StartpageTemplate.propTypes = {
   image: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
   title: PropTypes.string,
   heading: PropTypes.string,
@@ -154,7 +153,7 @@ const IndexPage = ({ data }) => {
   console.log("data", frontmatter.historia);
   return (
     <Layout>
-      <IndexPageTemplate
+      <StartpageTemplate
         image={frontmatter.image}
         title={frontmatter.title}
         heading={frontmatter.heading}
@@ -177,33 +176,34 @@ IndexPage.propTypes = {
 export default IndexPage;
 
 export const pageQuery = graphql`
-  query IndexPageTemplate {
-    markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+  query StartpageTemplate {
+    markdownRemark(frontmatter: { templateKey: { eq: "startsida" } }) {
       frontmatter {
-        title
-        image {
-          childImageSharp {
-            fluid(maxWidth: 2048, quality: 100) {
-              ...GatsbyImageSharpFluid
+        rubrik
+        underrubrik
+        left {
+          text
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
             }
           }
         }
-        heading
-        subheading
-        mainpitch {
-          beskrivning {
-            stycke
+        center {
+          text
+          image {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
           }
-          title
-          description
-          test
         }
-        historia {
-          rubrik
-          text {
-            stycke
-          }
-          bild {
+        right {
+          text
+          image {
             childImageSharp {
               fluid(maxWidth: 2048, quality: 100) {
                 ...GatsbyImageSharpFluid

@@ -12,7 +12,7 @@ const IndexPagePreview = ({ entry, getAsset }) => {
         underrubrik={data.underrubrik}
         left={data.left}
         center={data.center}
-        right={data.beskrivning}
+        right={data.right}
       />
     );
   } else {

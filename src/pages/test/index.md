@@ -5,6 +5,12 @@ underrubrik: test
 left:
   text: test
   image: /img/maxim-shklyaev-rthox_cst-q-unsplash.jpg
+hoger:
+  text: asd
+  image: /img/jesse-orrico-l94dwxnkwry-unsplash.jpg
+venster:
+  text: asd
+  image: /img/siarhei-plashchynski-6orpnpqmtao-unsplash.jpg
 center:
   text: test
   image: /img/jesse-orrico-l94dwxnkwry-unsplash.jpg

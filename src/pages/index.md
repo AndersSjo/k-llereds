@@ -1,4 +1,5 @@
 ---
+templateKey: startsida
 rubrik: GEDIGET HANTVERK
 underrubrik: – SEDAN 1983
 left:

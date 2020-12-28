@@ -331,6 +331,49 @@ collections:
                 ],
             }
 
+      - file: "src/pages/test/index.md"
+        label: "Test"
+        name: "test"
+        fields:
+          - {
+              label: "Template Key",
+              name: "templateKey",
+              widget: "hidden",
+              default: "test-page",
+            }
+          - { label: "Rubrik", name: "rubrik", widget: "string" }
+          - { label: "Underrubrik", name: "underrubrik", widget: "string" }
+          - {
+              label: "Left",
+              name: "left",
+              widget: object,
+              fields:
+                [
+                  { label: Image, name: image, widget: image },
+                  { label: Text, name: text, widget: string },
+                ],
+            }
+          - {
+              label: "Center",
+              name: "center",
+              widget: object,
+              fields:
+                [
+                  { label: Image, name: image, widget: image },
+                  { label: Text, name: text, widget: string },
+                ],
+            }
+          - {
+              label: "Right",
+              name: "right",
+              widget: object,
+              fields:
+                [
+                  { label: Image, name: image, widget: image },
+                  { label: Text, name: text, widget: string },
+                ],
+            }
+
   - name: "components"
     label: "Components"
     files:

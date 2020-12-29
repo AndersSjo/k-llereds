@@ -1,4 +1,5 @@
 ---
+templateKey: fastigheter
 title: GEDIGET HANTVERK
 image: /img/siarhei-plashchynski-6orpnpqmtao-unsplash.jpg
 heading: Great coffee with a conscience
@@ -24,7 +25,8 @@ mainpitch:
     - stycke: Byggbolaget grundades 1983 och har sedan dess verkat inom
         Göteborgs-regionen med omnejd och hjälpt våra kunder med ny- och
         om-byggnationer, tillbyggnationer och renoveringar.
-    - stycke: Kombinationen av att vi kan åta oss större entreprenader samtidigt som
+    - stycke:
+        Kombinationen av att vi kan åta oss större entreprenader samtidigt som
         vi har en relativt platt organisation gör oss till ett
         konkurrens-kraftigt alternativ både på de mindre som de större
         entreprenaderna, skillnaden är att vi inte tar på oss flera stora
@@ -36,18 +38,21 @@ mainpitch:
 historia:
   rubrik: VÅR HISTORIA
   text:
-    - stycke: Mitt under lågkonjunkturen 1983 grundade Gunnar Ehrenborg Kållereds Bygg
+    - stycke:
+        Mitt under lågkonjunkturen 1983 grundade Gunnar Ehrenborg Kållereds Bygg
         AB och lyckades med varsamhet och hårt arbete starta verksamheten trots
         de dåliga tiderna. Konjunkturerna går upp och ner och efter de goda åren
         i slutet av 80-talet inköptes några fastigheter för om- och nybyggnation
         vilket säkerställde de anställdas arbete. Senare startades Kållereds
         Fastighets AB och Kållereds Förvaltnings AB för att förvalta egna och
         andras fastigheter.
-    - stycke: "2a generationen: 2008 började Patrik Ehrenborg, Gunnars son, att arbeta
+    - stycke:
+        "2a generationen: 2008 började Patrik Ehrenborg, Gunnars son, att arbeta
         heltid för företaget efter avslutad utbildning inom arbetsledning bygg.
         2015 tog Patrik över som VD för Kållereds Bygg AB och ett
         generationsskifte påbörjades."
-    - stycke: Sedan 2018 är koncernen splittrad och Kållereds Bygg AB drivs idag av
+    - stycke:
+        Sedan 2018 är koncernen splittrad och Kållereds Bygg AB drivs idag av
         Patrik Ehrenborg tillsammans med 3 st delägare.
   bild: /img/greyson-joralemon-cxlls8jm1vi-unsplash.jpg
 personer:

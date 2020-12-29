@@ -92,7 +92,9 @@ export const StartpageTemplate = ({
           }
         >
           <CustomTitle>{venster.text}</CustomTitle>
-          <CustomButton yellow>LÄS MER</CustomButton>
+          <Link to="/byggservice">
+            <CustomButton yellow>LÄS MER</CustomButton>
+          </Link>
         </ImageSection>
         <ImageSection
           url={
@@ -102,7 +104,9 @@ export const StartpageTemplate = ({
           }
         >
           <CustomTitle>{center.text}</CustomTitle>
-          <CustomButton yellow>LÄS MER</CustomButton>
+          <Link to="/bygg">
+            <CustomButton yellow>LÄS MER</CustomButton>
+          </Link>
         </ImageSection>
         <ImageSection
           url={
@@ -112,7 +116,9 @@ export const StartpageTemplate = ({
           }
         >
           <CustomTitle>{hoger.text}</CustomTitle>
-          <CustomButton yellow>LÄS MER</CustomButton>
+          <Link to="/fastigheter">
+            <CustomButton yellow>LÄS MER</CustomButton>
+          </Link>
         </ImageSection>
       </CustomContainer>
     </div>

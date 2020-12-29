@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export default styled.div`
   display: flex;
@@ -17,4 +17,12 @@ export default styled.div`
     `
       flex-direction: row;
     `}
+
+  @media screen and (max-width: 900px) {
+    ${(props) =>
+      props.row &&
+      `
+      flex-direction: column;
+    `}
+  }
 `;

@@ -2,7 +2,10 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 import styled from "styled-components";
-import Text from "../components/Text";
+import Button from "../components/Button";
+import Container from "../components/Container";
+
+import { useMediaQuery } from "../hooks/media";
 
 import Layout from "../components/Layout";
 
@@ -16,8 +19,11 @@ const Title = styled.div`
   padding: 0;
   text-align: center;
 
-  @media screen and (max-width: 1200px) {
-    font-size: 9.3vw;
+  @media screen and (max-width: 1400px) {
+    font-size: 2.8vw;
+  }
+  @media screen and (max-width: 900px) {
+    font-size: 1.5em;
   }
 `;
 const SubTitle = styled.div`
@@ -30,75 +36,25 @@ const SubTitle = styled.div`
   text-align: center;
   padding: 0;
 
-  @media screen and (max-width: 1200px) {
-    font-size: 5.3vw;
+  @media screen and (max-width: 1400px) {
+    font-size: 1.7vw;
+  }
+  @media screen and (max-width: 900px) {
+    font-size: 1em;
   }
 `;
-const Centralizer = styled.div`
+const AbsoluteTitle = styled.div`
+  position: absolute;
+  z-index: 1;
+  top: 100px;
   width: 100%;
   display: flex;
   justify-content: center;
   flex-direction: column;
 
-  ${(props) =>
-    props.row &&
-    `
-      flex-direction: row;
-    `}
-`;
-const SplashImage = styled.div`
-  width: 100vw;
-  height: 75vh;
-  background-size: cover;
-  background-position: bottom;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 0 !important;
-  backgroundposition: top left;
-  backgroundattachment: fixed;
-  ${(props) =>
-    `
-      background-image: url(${props.url});
-    `}
-`;
-
-const Paragraph = styled.div`
-  padding-top: 40px;
-  font-size: 1.5em;
-  font-weight: 600;
-  color: rgb(30, 79, 86);
-  width: 100%;
-  ${(props) =>
-    props.center &&
-    `
-      text-align: center;
-    `}
-  ${(props) =>
-    props.white &&
-    `
-      color: white;
-    `}
-
   @media screen and (max-width: 900px) {
-    font-size: 1em;
+    top: 20px;
   }
-`;
-
-const Button = styled.button`
-  background-color: rgb(32, 37, 43);
-  border-radius: 30px;
-  border-width: 0px;
-  cursor: pointer;
-  justify-content: center;
-  text-align: center;
-  padding: 15px 40px;
-  ${(props) =>
-    props.yellow &&
-    `
-      background-color: rgb(250, 223, 54);
-      color: rgb(35, 31, 32);
-    `}
 `;
 
 const Image = styled.div`
@@ -120,61 +76,88 @@ export const StartpageTemplate = ({
   venster,
   center,
   hoger,
-}) => (
-  <div>
-    <Centralizer style={{ position: "absolute", top: "100px" }}>
-      <Title>{rubrik}</Title>
-      <SubTitle>{underrubrik}</SubTitle>
-    </Centralizer>
-    <Centralizer row style={{ height: "100vh", width: "100vw" }}>
-      <Image
-        url={
-          !!venster.image.childImageSharp
-            ? venster.image.childImageSharp.fluid.src
-            : venster.image
-        }
-        style={{ width: "33.3%", flexDirection: "column" }}
+}) => {
+  const isMobile = useMediaQuery("(min-width: 900px)");
+  return (
+    <div>
+      <AbsoluteTitle>
+        <Title>{rubrik}</Title>
+        <SubTitle>{underrubrik}</SubTitle>
+      </AbsoluteTitle>
+      <Container
+        style={{
+          height: isMobile ? "100vh" : "100%",
+          width: "100vw",
+          flexDirection: isMobile ? "row" : "column",
+        }}
       >
-        <Title style={{ textShadow: "none", width: "250px", fontSize: "2em" }}>
-          {venster.text}
-        </Title>
-        <Button yellow style={{ fontWeight: "900", marginTop: "40px" }}>
-          LÄS MER
-        </Button>
-      </Image>
-      <Image
-        url={
-          !!center.image.childImageSharp
-            ? center.image.childImageSharp.fluid.src
-            : center.image
-        }
-        style={{ width: "33.3%", flexDirection: "column" }}
-      >
-        <Title style={{ textShadow: "none", width: "250px", fontSize: "2em" }}>
-          {center.text}
-        </Title>
-        <Button yellow style={{ fontWeight: "900", marginTop: "40px" }}>
-          LÄS MER
-        </Button>
-      </Image>
-      <Image
-        url={
-          !!hoger.image.childImageSharp
-            ? hoger.image.childImageSharp.fluid.src
-            : hoger.image
-        }
-        style={{ width: "33.3%", flexDirection: "column" }}
-      >
-        <Title style={{ textShadow: "none", width: "250px", fontSize: "2em" }}>
-          {hoger.text}
-        </Title>
-        <Button yellow style={{ fontWeight: "900", marginTop: "40px" }}>
-          LÄS MER
-        </Button>
-      </Image>
-    </Centralizer>
-  </div>
-);
+        <Image
+          url={
+            !!venster.image.childImageSharp
+              ? venster.image.childImageSharp.fluid.src
+              : venster.image
+          }
+          style={{
+            width: isMobile ? "33.3%" : "100%",
+            height: isMobile ? "100%" : "350px",
+            flexDirection: "column",
+          }}
+        >
+          <Title
+            style={{ textShadow: "none", width: "250px", fontSize: "2em" }}
+          >
+            {venster.text}
+          </Title>
+          <Button yellow style={{ fontWeight: "900", marginTop: "40px" }}>
+            LÄS MER
+          </Button>
+        </Image>
+        <Image
+          url={
+            !!center.image.childImageSharp
+              ? center.image.childImageSharp.fluid.src
+              : center.image
+          }
+          style={{
+            width: isMobile ? "33.3%" : "100%",
+            height: isMobile ? "100%" : "350px",
+            flexDirection: "column",
+          }}
+        >
+          <Title
+            style={{ textShadow: "none", width: "250px", fontSize: "2em" }}
+          >
+            {center.text}
+          </Title>
+          <Button yellow style={{ fontWeight: "900", marginTop: "40px" }}>
+            LÄS MER
+          </Button>
+        </Image>
+        <Image
+          url={
+            !!hoger.image.childImageSharp
+              ? hoger.image.childImageSharp.fluid.src
+              : hoger.image
+          }
+          style={{
+            width: isMobile ? "33.3%" : "100%",
+            height: isMobile ? "100%" : "350px",
+            flexDirection: "column",
+          }}
+        >
+          <Title
+            style={{ textShadow: "none", width: "250px", fontSize: "2em" }}
+          >
+            {hoger.text}
+          </Title>
+          <Button yellow style={{ fontWeight: "900", marginTop: "40px" }}>
+            LÄS MER
+          </Button>
+        </Image>
+      </Container>
+    </div>
+  );
+};
 
 StartpageTemplate.propTypes = {
   rubrik: PropTypes.string,

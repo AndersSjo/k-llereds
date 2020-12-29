@@ -1,9 +1,10 @@
-import React from 'react';
-import { navigate } from 'gatsby-link';
-import Layout from '../../components/Layout';
-import Container from '../../components/Container';
-import Text from '../../components/Text';
-import styled from 'styled-components';
+import React from "react";
+import { navigate } from "gatsby-link";
+import Layout from "../../components/Layout";
+import Container from "../../components/Container";
+import Text from "../../components/Text";
+import Button from "../../components/Button";
+import styled from "styled-components";
 
 const Image = styled.div`
   background-size: cover;
@@ -35,20 +36,10 @@ const InputTextArea = styled.textarea`
   color: #363636;
 `;
 
-const Button = styled.button`
-  background-color: rgb(32, 37, 43);
-  border-radius: 30px;
-  border-width: 0px;
-  cursor: pointer;
-  justify-content: center;
-  text-align: center;
-  padding: 15px 40px;
-`;
-
 function encode(data) {
   return Object.keys(data)
-    .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key]))
-    .join('&');
+    .map((key) => encodeURIComponent(key) + "=" + encodeURIComponent(data[key]))
+    .join("&");
 }
 
 export default class Index extends React.Component {
@@ -64,15 +55,15 @@ export default class Index extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: encode({
-        'form-name': form.getAttribute('name'),
+        "form-name": form.getAttribute("name"),
         ...this.state,
       }),
     })
-      .then(() => navigate(form.getAttribute('action')))
+      .then(() => navigate(form.getAttribute("action")))
       .catch((error) => alert(error));
   };
 
@@ -84,12 +75,18 @@ export default class Index extends React.Component {
             <Image
               style={{
                 backgroundImage: `url('/img/blog-index.jpg')`,
-                width: '35%',
+                width: "35%",
               }}
             >
               imgage
             </Image>
-            <div className="content" style={{ backgroundColor: 'rgb(175, 187, 198)', padding: '120px 5%' }}>
+            <div
+              className="content"
+              style={{
+                backgroundColor: "rgb(175, 187, 198)",
+                padding: "120px 5%",
+              }}
+            >
               <Text white bold header>
                 KONTAKTA OSS
               </Text>
@@ -97,7 +94,8 @@ export default class Index extends React.Component {
                 Söker ni nya lokaler?
               </Text>
               <Text white semiBold sub>
-                Välkommen att kontakta oss via kontaktuppgifterna nedan eller kontaktformuläret till höger.
+                Välkommen att kontakta oss via kontaktuppgifterna nedan eller
+                kontaktformuläret till höger.
               </Text>
               <form
                 name="contact"
@@ -106,33 +104,34 @@ export default class Index extends React.Component {
                 data-netlify="true"
                 data-netlify-honeypot="bot-field"
                 onSubmit={this.handleSubmit}
-                style={{ marginTop: '40px' }}
+                style={{ marginTop: "40px" }}
               >
                 {/* The `form-name` hidden field is required to support form submissions without JavaScript */}
                 <input type="hidden" name="form-name" value="contact" />
                 <div hidden>
                   <label>
-                    Don’t fill this out: <input name="bot-field" onChange={this.handleChange} />
+                    Don’t fill this out:{" "}
+                    <input name="bot-field" onChange={this.handleChange} />
                   </label>
                 </div>
                 <Container row spaceBetween>
-                  <div className="field" style={{ width: '46%' }}>
-                    <label className="label" htmlFor={'name'}>
+                  <div className="field" style={{ width: "46%" }}>
+                    <label className="label" htmlFor={"name"}>
                       <Text white semiBold>
                         Namn
                       </Text>
                     </label>
                     <InputTextField
                       className="input"
-                      type={'text'}
-                      name={'name'}
+                      type={"text"}
+                      name={"name"}
                       onChange={this.handleChange}
-                      id={'name'}
+                      id={"name"}
                       required={true}
                     />
                   </div>
-                  <div className="field" style={{ width: '50%' }}>
-                    <label className="label" htmlFor={'phone'}>
+                  <div className="field" style={{ width: "50%" }}>
+                    <label className="label" htmlFor={"phone"}>
                       <Text white semiBold>
                         Telefon
                       </Text>
@@ -140,17 +139,17 @@ export default class Index extends React.Component {
                     <div className="control">
                       <InputTextField
                         className="input"
-                        type={'text'}
-                        name={'phone'}
+                        type={"text"}
+                        name={"phone"}
                         onChange={this.handleChange}
-                        id={'phone'}
+                        id={"phone"}
                         required={true}
                       />
                     </div>
                   </div>
                 </Container>
                 <div className="field">
-                  <label className="label" htmlFor={'email'}>
+                  <label className="label" htmlFor={"email"}>
                     <Text white semiBold>
                       E-post
                     </Text>
@@ -158,16 +157,16 @@ export default class Index extends React.Component {
                   <div className="control">
                     <InputTextField
                       className="input"
-                      type={'email'}
-                      name={'email'}
+                      type={"email"}
+                      name={"email"}
                       onChange={this.handleChange}
-                      id={'email'}
+                      id={"email"}
                       required={true}
                     />
                   </div>
                 </div>
                 <div className="field">
-                  <label className="label" htmlFor={'message'}>
+                  <label className="label" htmlFor={"message"}>
                     <Text white semiBold>
                       Meddelande
                     </Text>
@@ -175,14 +174,14 @@ export default class Index extends React.Component {
                   <div className="control">
                     <InputTextArea
                       className="textarea"
-                      name={'message'}
+                      name={"message"}
                       onChange={this.handleChange}
-                      id={'message'}
+                      id={"message"}
                       required={true}
                     />
                   </div>
                 </div>
-                <Button type="submit" style={{ marginTop: '30px' }}>
+                <Button type="submit" style={{ marginTop: "30px" }}>
                   <Text gray bold sub>
                     Skicka
                   </Text>

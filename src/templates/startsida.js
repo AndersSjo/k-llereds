@@ -77,7 +77,9 @@ export const StartpageTemplate = ({
   center,
   hoger,
 }) => {
-  const isMobile = useMediaQuery("(min-width: 900px)");
+  const win = typeof window !== `undefined` ? window : {};
+  console.log("win", win);
+  const isMobile = useMediaQuery("(min-width: 900px)", win);
   return (
     <div>
       <AbsoluteTitle>

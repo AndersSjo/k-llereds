@@ -78,6 +78,7 @@ export const StartpageTemplate2 = ({
   hoger,
 }) => {
   const win = typeof window !== `undefined` ? window : {};
+  console.log("win", win);
   const isMobile = useMediaQuery("(min-width: 900px)", win);
   return (
     <div>

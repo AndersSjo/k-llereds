@@ -5,8 +5,6 @@ import styled from "styled-components";
 import Button from "../components/Button";
 import Container from "../components/Container";
 
-import { useMediaQuery } from "../hooks/media";
-
 import Layout from "../components/Layout";
 
 const Title = styled.div`
@@ -70,6 +68,27 @@ const Image = styled.div`
     `}
 `;
 
+const ImageSection = styled(Image)`
+  width: 33.3%;
+  height: 100%;
+  flex-direction: column;
+
+  @media screen and (max-width: 900px) {
+    width: 100%;
+    height: 350px;
+  }
+`;
+
+const CustomContainer = styled(Container)`
+  height: 100vh;
+  width: 100vw;
+  flex-direction: row;
+  @media screen and (max-width: 900px) {
+    width: 100%;
+    flex-direction: column;
+  }
+`;
+
 export const StartpageTemplate = ({
   rubrik,
   underrubrik,
@@ -77,33 +96,25 @@ export const StartpageTemplate = ({
   center,
   hoger,
 }) => {
-  const win = typeof window !== `undefined` ? window : {};
-  console.log("win", win);
-  const isMobile = useMediaQuery("(min-width: 900px)", win);
   return (
     <div>
       <AbsoluteTitle>
         <Title>{rubrik}</Title>
         <SubTitle>{underrubrik}</SubTitle>
       </AbsoluteTitle>
-      <Container
+      <CustomContainer
         style={{
-          height: isMobile ? "100vh" : "100%",
+          height: "100vh",
           width: "100vw",
-          flexDirection: isMobile ? "row" : "column",
+          flexDirection: "row",
         }}
       >
-        <Image
+        <ImageSection
           url={
             !!venster.image.childImageSharp
               ? venster.image.childImageSharp.fluid.src
               : venster.image
           }
-          style={{
-            width: isMobile ? "33.3%" : "100%",
-            height: isMobile ? "100%" : "350px",
-            flexDirection: "column",
-          }}
         >
           <Title
             style={{ textShadow: "none", width: "250px", fontSize: "2em" }}
@@ -113,18 +124,13 @@ export const StartpageTemplate = ({
           <Button yellow style={{ fontWeight: "900", marginTop: "40px" }}>
             LÄS MER
           </Button>
-        </Image>
-        <Image
+        </ImageSection>
+        <ImageSection
           url={
             !!center.image.childImageSharp
               ? center.image.childImageSharp.fluid.src
               : center.image
           }
-          style={{
-            width: isMobile ? "33.3%" : "100%",
-            height: isMobile ? "100%" : "350px",
-            flexDirection: "column",
-          }}
         >
           <Title
             style={{ textShadow: "none", width: "250px", fontSize: "2em" }}
@@ -134,18 +140,13 @@ export const StartpageTemplate = ({
           <Button yellow style={{ fontWeight: "900", marginTop: "40px" }}>
             LÄS MER
           </Button>
-        </Image>
-        <Image
+        </ImageSection>
+        <ImageSection
           url={
             !!hoger.image.childImageSharp
               ? hoger.image.childImageSharp.fluid.src
               : hoger.image
           }
-          style={{
-            width: isMobile ? "33.3%" : "100%",
-            height: isMobile ? "100%" : "350px",
-            flexDirection: "column",
-          }}
         >
           <Title
             style={{ textShadow: "none", width: "250px", fontSize: "2em" }}
@@ -155,8 +156,8 @@ export const StartpageTemplate = ({
           <Button yellow style={{ fontWeight: "900", marginTop: "40px" }}>
             LÄS MER
           </Button>
-        </Image>
-      </Container>
+        </ImageSection>
+      </CustomContainer>
     </div>
   );
 };

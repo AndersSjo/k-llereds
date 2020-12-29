@@ -5,8 +5,6 @@ import styled from "styled-components";
 import Button from "../components/Button";
 import Container from "../components/Container";
 
-import { useMediaQuery } from "../hooks/media";
-
 import Layout from "../components/Layout";
 
 const Title = styled.div`
@@ -77,9 +75,6 @@ export const StartpageTemplate2 = ({
   center,
   hoger,
 }) => {
-  const win = typeof window !== `undefined` ? window : {};
-  console.log("win", win);
-  const isMobile = useMediaQuery("(min-width: 900px)", win);
   return (
     <div>
       <AbsoluteTitle>
@@ -88,9 +83,8 @@ export const StartpageTemplate2 = ({
       </AbsoluteTitle>
       <Container
         style={{
-          height: isMobile ? "100vh" : "100%",
           width: "100vw",
-          flexDirection: isMobile ? "row" : "column",
+          flexDirection: "column",
         }}
       >
         <Image
@@ -100,8 +94,8 @@ export const StartpageTemplate2 = ({
               : venster.image
           }
           style={{
-            width: isMobile ? "33.3%" : "100%",
-            height: isMobile ? "100%" : "350px",
+            width: "100%",
+            height: "350px",
             flexDirection: "column",
           }}
         >
@@ -121,8 +115,8 @@ export const StartpageTemplate2 = ({
               : center.image
           }
           style={{
-            width: isMobile ? "33.3%" : "100%",
-            height: isMobile ? "100%" : "350px",
+            width: "100%",
+            height: "350px",
             flexDirection: "column",
           }}
         >
@@ -142,8 +136,8 @@ export const StartpageTemplate2 = ({
               : hoger.image
           }
           style={{
-            width: isMobile ? "33.3%" : "100%",
-            height: isMobile ? "100%" : "350px",
+            width: "100%",
+            height: "350px",
             flexDirection: "column",
           }}
         >

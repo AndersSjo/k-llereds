@@ -102,13 +102,7 @@ export const StartpageTemplate = ({
         <Title>{rubrik}</Title>
         <SubTitle>{underrubrik}</SubTitle>
       </AbsoluteTitle>
-      <CustomContainer
-        style={{
-          height: "100vh",
-          width: "100vw",
-          flexDirection: "row",
-        }}
-      >
+      <CustomContainer>
         <ImageSection
           url={
             !!venster.image.childImageSharp

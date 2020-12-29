@@ -3,36 +3,15 @@ import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 import styled from "styled-components";
 import Button from "../components/Button";
+import Image from "../components/Image";
+import Title from "../components/Title";
 import Container from "../components/Container";
 
 import Layout from "../components/Layout";
 
-const Title = styled.div`
-  color: rgb(250, 223, 54);
-  line-height: 1;
-  padding: 0.25em;
-  font-size: 2.5em;
-  text-shadow: 6px 3px 7px rgba(57, 57, 57, 0.9);
-  font-weight: 900;
-  padding: 0;
-  text-align: center;
-
-  @media screen and (max-width: 1400px) {
-    font-size: 2.8vw;
-  }
-  @media screen and (max-width: 900px) {
-    font-size: 1.5em;
-  }
-`;
-const SubTitle = styled.div`
-  color: rgb(250, 223, 54);
-  line-height: 1;
-  padding: 0.25em;
-  text-shadow: 6px 3px 7px rgba(57, 57, 57, 0.9);
+const SubTitle = styled(Title)`
   font-size: 1.5em;
   font-weight: 800;
-  text-align: center;
-  padding: 0;
 
   @media screen and (max-width: 1400px) {
     font-size: 1.7vw;
@@ -55,19 +34,6 @@ const AbsoluteTitle = styled.div`
   }
 `;
 
-const Image = styled.div`
-  background-size: cover;
-  background-position: bottom;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  ${(props) =>
-    props.url &&
-    `
-      background-image: url(${props.url});
-    `}
-`;
-
 const ImageSection = styled(Image)`
   width: 33.3%;
   height: 100%;
@@ -84,9 +50,24 @@ const CustomContainer = styled(Container)`
   width: 100vw;
   flex-direction: row;
   @media screen and (max-width: 900px) {
+    height: 100%;
     width: 100%;
     flex-direction: column;
   }
+`;
+
+const CustomTitle = styled(Title)`
+  text-shadow: none;
+  width: 250px;
+  @media screen and (max-width: 1050px) {
+    flex-direction: column;
+    width: 160px;
+  }
+`;
+
+const CustomButton = styled(Button)`
+  font-weight: 900;
+  margin-top: 40px;
 `;
 
 export const StartpageTemplate = ({
@@ -110,14 +91,8 @@ export const StartpageTemplate = ({
               : venster.image
           }
         >
-          <Title
-            style={{ textShadow: "none", width: "250px", fontSize: "2em" }}
-          >
-            {venster.text}
-          </Title>
-          <Button yellow style={{ fontWeight: "900", marginTop: "40px" }}>
-            LÄS MER
-          </Button>
+          <CustomTitle>{venster.text}</CustomTitle>
+          <CustomButton yellow>LÄS MER</CustomButton>
         </ImageSection>
         <ImageSection
           url={
@@ -126,14 +101,8 @@ export const StartpageTemplate = ({
               : center.image
           }
         >
-          <Title
-            style={{ textShadow: "none", width: "250px", fontSize: "2em" }}
-          >
-            {center.text}
-          </Title>
-          <Button yellow style={{ fontWeight: "900", marginTop: "40px" }}>
-            LÄS MER
-          </Button>
+          <CustomTitle>{center.text}</CustomTitle>
+          <CustomButton yellow>LÄS MER</CustomButton>
         </ImageSection>
         <ImageSection
           url={
@@ -142,14 +111,8 @@ export const StartpageTemplate = ({
               : hoger.image
           }
         >
-          <Title
-            style={{ textShadow: "none", width: "250px", fontSize: "2em" }}
-          >
-            {hoger.text}
-          </Title>
-          <Button yellow style={{ fontWeight: "900", marginTop: "40px" }}>
-            LÄS MER
-          </Button>
+          <CustomTitle>{hoger.text}</CustomTitle>
+          <CustomButton yellow>LÄS MER</CustomButton>
         </ImageSection>
       </CustomContainer>
     </div>

@@ -17,6 +17,12 @@ export default styled.div`
     `
       flex-direction: row;
     `}
+  ${(props) =>
+    props.grey &&
+    `
+      color: white;
+      background-color: rgb(30, 79, 86); 
+    `}
 
   @media screen and (max-width: 900px) {
     ${(props) =>

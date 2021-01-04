@@ -12,11 +12,12 @@ ContentPage.propTypes = {
   mainpitch: PropTypes.object,
   description: PropTypes.string,
   historia: PropTypes.object,
+  personer: PropTypes.object,
 };
 
 const ByggservicePage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
-  console.log("data", frontmatter.historia);
+  console.log("data", frontmatter);
   return (
     <Layout>
       <ContentPage
@@ -26,6 +27,8 @@ const ByggservicePage = ({ data }) => {
         subheading={frontmatter.subheading}
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
+        historia={frontmatter.historia}
+        personer={frontmatter.personer}
       />
     </Layout>
   );
@@ -71,6 +74,39 @@ export const pageQuery = graphql`
             childImageSharp {
               fluid(maxWidth: 2048, quality: 100) {
                 ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+        kontakt {
+          rubrik
+          text {
+            stycke
+          }
+          bild {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+        personer {
+          rubrik
+          text {
+            stycke
+          }
+          bild {
+            namn
+            titel
+            telefon
+            fax
+            mail
+            bild {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
               }
             }
           }

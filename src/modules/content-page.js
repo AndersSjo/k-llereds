@@ -90,6 +90,23 @@ const Paragraph = styled.div`
   }
 `;
 
+const CustomContainer = styled(Container)`
+  width: 50%;
+  padding-left: 7%;
+  padding-right: 3%;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  @media screen and (max-width: 900px) {
+    padding-left: 5%;
+    width: 100%;
+  }
+`;
+const CustomImage = styled(Image)`
+  @media screen and (max-width: 900px) {
+    display: none;
+  }
+`;
+
 export default ({
   image,
   title,
@@ -142,16 +159,8 @@ export default ({
         </div>
       </div>
     </section>
-    <Container row style={{ height: "800px" }}>
-      <Container
-        grey
-        style={{
-          width: "50%",
-          paddingLeft: "7%",
-          paddingRight: "3%",
-          paddingTop: "50px",
-        }}
-      >
+    <Container row style={{ minHeight: "800px" }}>
+      <CustomContainer grey>
         <Title white style={{ textAlign: "left" }}>
           {historia.rubrik}
         </Title>
@@ -168,8 +177,8 @@ export default ({
             }}
           />
         </Text>
-      </Container>
-      <Image
+      </CustomContainer>
+      <CustomImage
         url={
           !!historia.bild.childImageSharp
             ? historia.bild.childImageSharp.fluid.src

@@ -75,6 +75,39 @@ export const pageQuery = graphql`
             }
           }
         }
+        kontakt {
+          rubrik
+          text {
+            stycke
+          }
+          bild {
+            childImageSharp {
+              fluid(maxWidth: 2048, quality: 100) {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+        personer {
+          rubrik
+          text {
+            stycke
+          }
+          bild {
+            namn
+            titel
+            telefon
+            fax
+            mail
+            bild {
+              childImageSharp {
+                fluid(maxWidth: 2048, quality: 100) {
+                  ...GatsbyImageSharpFluid
+                }
+              }
+            }
+          }
+        }
       }
     }
   }

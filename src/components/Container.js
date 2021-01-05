@@ -13,6 +13,11 @@ export default styled.div`
       justify-content: space-between;
     `}
   ${(props) =>
+    props.center &&
+    `
+      justify-content: center;
+    `}
+  ${(props) =>
     props.row &&
     `
       flex-direction: row;
@@ -22,6 +27,17 @@ export default styled.div`
     `
       color: white;
       background-color: rgb(30, 79, 86); 
+    `}
+  ${(props) =>
+    props.light &&
+    `
+      color: white;
+      background-color: rgb(175, 187, 198);
+    `}
+  ${(props) =>
+    props.wrap &&
+    `
+      flex-wrap: wrap;
     `}
 
   @media screen and (max-width: 900px) {

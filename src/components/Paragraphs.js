@@ -26,7 +26,7 @@ ${(props) =>
 const Paragraphs = ({paragraphs, textStyle}) => (
   paragraphs.map((stycke, i) => {
     return (
-        <Paragraph center style={textStyle}>{stycke.stycke}</Paragraph>
+        <Paragraph key={i} center style={textStyle}>{stycke.stycke}</Paragraph>
     );
   })
 )

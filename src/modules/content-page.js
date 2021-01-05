@@ -7,6 +7,7 @@ import Image from "../components/Image";
 import Text from "../components/Text";
 import Paragraphs from "../components/Paragraphs";
 import Contact from "../modules/Contact";
+import Persons from "../modules/Persons";
 
 const SplashTitle = styled.div`
   color: white;
@@ -116,6 +117,7 @@ export default ({
   historia,
   description,
   kontakt,
+  personer,
 }) => (
   <div>
     <SplashImage
@@ -187,6 +189,7 @@ export default ({
         style={{ width: "50%" }}
       />
     </Container>
+    <Persons persons={personer} />
     <Contact contact={kontakt} />
   </div>
 );

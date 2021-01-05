@@ -12,6 +12,7 @@ ContentPage.propTypes = {
   mainpitch: PropTypes.object,
   description: PropTypes.string,
   historia: PropTypes.object,
+  kontakt: PropTypes.object,
   personer: PropTypes.object,
 };
 
@@ -28,6 +29,7 @@ const ByggservicePage = ({ data }) => {
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
         historia={frontmatter.historia}
+        kontakt={frontmatter.kontakt}
         personer={frontmatter.personer}
       />
     </Layout>

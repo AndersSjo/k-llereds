@@ -2,10 +2,11 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 import styled from "styled-components";
-import Container from '../components/Container'
-import Image from '../components/Image'
-import Text from '../components/Text'
-import Paragraphs from '../components/Paragraphs'
+import Container from "../components/Container";
+import Image from "../components/Image";
+import Text from "../components/Text";
+import Paragraphs from "../components/Paragraphs";
+import Contact from "../modules/Contact";
 
 const SplashTitle = styled.div`
   color: white;
@@ -97,6 +98,7 @@ export default ({
   mainpitch,
   historia,
   description,
+  kontakt,
 }) => (
   <div>
     <SplashImage
@@ -140,12 +142,42 @@ export default ({
         </div>
       </div>
     </section>
-    <Container row style={{height: '800px'}}>
-      <Container grey style={{width: '50%', paddingLeft: '7%', paddingRight: '3%', paddingTop: '50px'}}>
-        <Title white style={{textAlign: 'left'}}>{historia.rubrik}</Title>
-        <Text><Paragraphs paragraphs={historia.text} textStyle={{color: 'white', fontSize: '1em', textAlign: 'left', fontWeight: '400', lineHeight: '30px', letterSpacing: '1.5px'}}/></Text>
+    <Container row style={{ height: "800px" }}>
+      <Container
+        grey
+        style={{
+          width: "50%",
+          paddingLeft: "7%",
+          paddingRight: "3%",
+          paddingTop: "50px",
+        }}
+      >
+        <Title white style={{ textAlign: "left" }}>
+          {historia.rubrik}
+        </Title>
+        <Text>
+          <Paragraphs
+            paragraphs={historia.text}
+            textStyle={{
+              color: "white",
+              fontSize: "1em",
+              textAlign: "left",
+              fontWeight: "400",
+              lineHeight: "30px",
+              letterSpacing: "1.5px",
+            }}
+          />
+        </Text>
       </Container>
-      <Image url={!!historia.bild.childImageSharp ? historia.bild.childImageSharp.fluid.src : historia.bild} style={{width: '50%'}} />
+      <Image
+        url={
+          !!historia.bild.childImageSharp
+            ? historia.bild.childImageSharp.fluid.src
+            : historia.bild
+        }
+        style={{ width: "50%" }}
+      />
     </Container>
+    <Contact contact={kontakt} />
   </div>
 );

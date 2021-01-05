@@ -12,6 +12,8 @@ ContentPage.propTypes = {
   mainpitch: PropTypes.object,
   description: PropTypes.string,
   historia: PropTypes.object,
+  kontakt: PropTypes.object,
+  personer: PropTypes.object,
 };
 
 const FastigheterPage = ({ data }) => {
@@ -26,6 +28,9 @@ const FastigheterPage = ({ data }) => {
         subheading={frontmatter.subheading}
         mainpitch={frontmatter.mainpitch}
         description={frontmatter.description}
+        historia={frontmatter.historia}
+        kontakt={frontmatter.kontakt}
+        personer={frontmatter.personer}
       />
     </Layout>
   );

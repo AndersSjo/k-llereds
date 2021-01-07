@@ -67,12 +67,12 @@ const Person = ({person}) => {
   console.log('person', person)
   return (
   <PersonContainer>
-    <Image url={!!person.bild.childImageSharp ? person.bild.childImageSharp.fluid.src : person.bild} style={{ width: "100%", height: "250px" }} />
-    <div>{person.namn}</div>
-    <div>{person.titel}</div>
-    <div>{person.telefon}</div>
-    <div>{person.fax}</div>
-    <div>{person.mail}</div>
+    <Image url={!!person.bild.childImageSharp ? person.bild.childImageSharp.fluid.src : person.bild} style={{ width: "100%", height: "280px" }} />
+    <Text><b>{person.namn}</b></Text>
+    <Text><b>{person.titel}</b></Text>
+    <Text>{person.telefon}</Text>
+    <Text>{person.fax}</Text>
+    <Text>{person.mail}</Text>
   </PersonContainer>
 )};
 

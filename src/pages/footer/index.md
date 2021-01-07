@@ -1,4 +1,5 @@
 ---
+templateKey: footer
 ven:
   - stycke: test
 hog:

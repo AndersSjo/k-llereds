@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { StaticQuery, Link } from "gatsby";
 
 import Container from "./Container";
 import Text from "./Text";

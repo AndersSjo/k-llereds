@@ -1,6 +1,4 @@
 import React from "react";
-import PropTypes from "prop-types";
-import { Link, graphql } from "gatsby";
 import styled from "styled-components";
 import Container from "../components/Container";
 import Image from "../components/Image";

@@ -1,11 +1,6 @@
 import React from "react";
-import { StaticQuery, Link } from "gatsby";
+import { StaticQuery } from "gatsby";
 
-import logo from "../img/logo.svg";
-import facebook from "../img/social/facebook.svg";
-import instagram from "../img/social/instagram.svg";
-import twitter from "../img/social/twitter.svg";
-import vimeo from "../img/social/vimeo.svg";
 import Paragraphs from "./Paragraphs";
 import Container from "./Container";
 

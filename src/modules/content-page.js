@@ -6,6 +6,8 @@ import Container from "../components/Container";
 import Image from "../components/Image";
 import Text from "../components/Text";
 import Paragraphs from "../components/Paragraphs";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 import Contact from "../modules/Contact";
 import Persons from "../modules/Persons";
 
@@ -120,6 +122,7 @@ export default ({
   personer,
 }) => (
   <div>
+    <Header />
     <SplashImage
       url={!!image.childImageSharp ? image.childImageSharp.fluid.src : image}
     >
@@ -191,5 +194,6 @@ export default ({
     </Container>
     <Persons persons={personer} />
     <Contact contact={kontakt} />
+    <Footer />
   </div>
 );

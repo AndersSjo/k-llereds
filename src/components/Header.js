@@ -51,7 +51,7 @@ export default ({ refs = {}, isFastigheter = false }) => {
         </Title>
       </Link>
       {aboutRef && <Container row style={{ justifyContent: "center" }}>
-        {window.location.pathname === "/fastigheter" && (
+        {window?.location?.pathname === "/fastigheter" && (
           
           <CustomText white><Link style={{color:"white"}} to="/objekt">VÅRA FASTIGHETER</Link></CustomText>
         )}

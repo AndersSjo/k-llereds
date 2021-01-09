@@ -2,6 +2,7 @@
 templateKey: objekt
 title: Våra fastigheter
 description: Vi äger ett antal fastigheter kring Göteborg.
+bild: /img/etienne-beauregard-riverin-b0acvavsx8e-unsplash.jpg
 fastigheter:
   - bild: /img/57184b8c06a80763aff4c5c23a526429_14eb10cbbd026ea94c73e0aee45a8d12.jpg
     adress: Midsommarvägen 2

@@ -23,6 +23,13 @@ function scrollToRef(ref) {
   window.scrollTo(0, offsetTop);
 }
 
+const isRealEstate = () => {
+  if(window) {
+    return window?.location?.pathname === "/fastigheter"
+  }
+  return false;
+}
+
 export default ({ refs = {}, isFastigheter = false }) => {
   const { aboutRef, historyRef, contactRef } = refs;
   return (
@@ -51,7 +58,7 @@ export default ({ refs = {}, isFastigheter = false }) => {
         </Title>
       </Link>
       {aboutRef && <Container row style={{ justifyContent: "center" }}>
-        {window?.location?.pathname === "/fastigheter" && (
+        {isRealEstate && (
           
           <CustomText white><Link style={{color:"white"}} to="/objekt">VÅRA FASTIGHETER</Link></CustomText>
         )}

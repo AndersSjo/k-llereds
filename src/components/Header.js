@@ -24,6 +24,7 @@ function scrollToRef(ref) {
 }
 
 const isRealEstate = () => {
+  console.log('IS REAL ESTATE', window.location.pathname)
   if(window) {
     return window?.location?.pathname === "/fastigheter"
   }
@@ -58,7 +59,7 @@ export default ({ refs = {}, isFastigheter = false }) => {
         </Title>
       </Link>
       {aboutRef && <Container row style={{ justifyContent: "center" }}>
-        {isRealEstate && (
+        {isRealEstate() && (
           
           <CustomText white><Link style={{color:"white"}} to="/objekt">VÅRA FASTIGHETER</Link></CustomText>
         )}

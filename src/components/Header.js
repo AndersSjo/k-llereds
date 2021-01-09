@@ -14,6 +14,16 @@ const CustomText = styled(Text)`
   cursor: pointer;
 `;
 
+const Back = styled(CustomText)`
+  position: absolute;
+  left:30px;
+  top:30px;
+  @media screen and (max-width: 900px) {
+    left: 0;
+    top: 10px;
+  }
+`;
+
 function scrollToRef(ref) {
   console.log(ref);
   console.log("clicked");
@@ -42,7 +52,7 @@ export default ({ refs = {}, isFastigheter = false }) => {
         padding: "15px",
       }}
     >
-      {aboutRef ? <Container row style={{ justifyContent: "center" }}>
+      {aboutRef ? <Container row style={{ justifyContent: "center", width: "20%" }}>
         <CustomText white onClick={() => scrollToRef(aboutRef)}>
           OM OSS
         </CustomText>
@@ -50,14 +60,14 @@ export default ({ refs = {}, isFastigheter = false }) => {
           VÅR HISTORIA
         </CustomText>
       </Container> :
-      <CustomText style={{ position:"absolute", left:"30px", top:"30px"}}><Link style={{color:"white"}} to="/fastigheter">{'<- Tillbaka'}</Link></CustomText>}
+      <Back><Link style={{color:"white"}} to="/fastigheter">{'<- Tillbaka'}</Link></Back>}
       <Link style={{ cursor: "pointer" }} to="/">
         <Title style={{ fontSize: "2.2em" }}>GEDIGET HANTVERK</Title>
         <Title style={{ fontSize: "1.5em", fontWeight: "700" }}>
           - SEDAN 1983
         </Title>
       </Link>
-      {aboutRef && <Container row style={{ justifyContent: "center" }}>
+      {aboutRef && <Container row style={{ justifyContent: "center", width: "20%" }}>
         {isRealEstate() && (
           
           <CustomText white><Link style={{color:"white"}} to="/objekt">VÅRA FASTIGHETER</Link></CustomText>

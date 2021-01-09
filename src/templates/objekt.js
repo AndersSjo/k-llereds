@@ -25,8 +25,24 @@ const SplashTitle = styled.div`
   }
 `;
 const CustomContainer = styled(Container)`
-  height: 500px;
+  height: 550px;
   width: 100%;
+  flex-direction: row;
+  padding: 30px 60px 0 60px;
+  maxWidth: 1200px;
+  justifyContent: center;
+  :nth-of-type(odd) {
+    flex-direction: row-reverse;
+    
+    @media screen and (max-width: 900px) {
+      flex-direction: column-reverse;
+    }
+  }
+  @media screen and (max-width: 900px) {
+    flex-direction: column-reverse;
+    height: 100%;
+    padding: 30px 20px 0 20px;
+  }
 `;
 const SplashImage = styled.div`
   width: 100vw;
@@ -45,42 +61,25 @@ const SplashImage = styled.div`
     `}
 `;
 
-const Title = styled.div`
-  font-size: 3.3em;
-  text-align: center;
-  font-weight: 900;
-  color: rgb(30, 79, 86);
-  width: 100%;
-
-  @media screen and (max-width: 1200px) {
-    font-size: 4.4vw;
-  }
-`;
-
-const Paragraph = styled.div`
-  padding-top: 40px;
-  font-size: 1.5em;
-  font-weight: 600;
-  color: rgb(30, 79, 86);
-  width: 100%;
-  ${(props) =>
-    props.center &&
-    `
-      text-align: center;
-    `}
-  ${(props) =>
-    props.white &&
-    `
-      color: white;
-    `}
+const ApartmentInformation = styled(Container)`
+  height: 100%;
+  width: 50%;
 
   @media screen and (max-width: 900px) {
-    font-size: 1em;
+    width: 100%;
+    padding-bottom: 30px;
   }
 `;
 
-const CustomFooter = styled(Footer)`
-  
+const ApartmentImage = styled(Image)`
+  height: 100%;
+  width: 50%;
+
+  @media screen and (max-width: 900px) {
+    height: 400px;
+    width: 100%;
+    padding-bottom: 30px;
+  }
 `;
 
 export const Objects = ({
@@ -108,8 +107,8 @@ export const Objects = ({
     </SplashImage>
     {fastigheter.map((apartment, i) => {
       return (
-        <CustomContainer style={{flexDirection: i % 2 === 0 ? 'row' : 'row-reverse', padding: "30px 60px 0 60px", maxWidth: "1200px", justifyContent: "center"}}>
-          <Container grey style={{height:"100%", width:"50%"}}>
+        <CustomContainer>
+          <ApartmentInformation grey >
             <Text style={{fontSize:"2em", textAlign: "center", marginTop:"20px"}}>
               {apartment.adress}
             </Text>
@@ -122,8 +121,8 @@ export const Objects = ({
                       textAlign: "left"
                     }} />
             </Container>
-          </Container>
-          <Image style={{height:"100%", width:"50%"}} url={!!apartment.bild.childImageSharp ? apartment.bild.childImageSharp.fluid.src : apartment.bild}/>
+          </ApartmentInformation>
+          <ApartmentImage url={!!apartment.bild.childImageSharp ? apartment.bild.childImageSharp.fluid.src : apartment.bild}/>
         </CustomContainer>
       )
     })}

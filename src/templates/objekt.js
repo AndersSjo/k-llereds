@@ -4,9 +4,12 @@ import { Link, graphql } from "gatsby";
 import styled from "styled-components";
 
 import Layout from "../components/Layout";
-import Features from "../components/Features";
+import Text from "../components/Text";
 import Header from "../components/Header";
 import Container from "../components/Container";
+import Image from "../components/Image";
+import Paragraphs from "../components/Paragraphs";
+import Footer from "../components/Footer";
 
 const SplashTitle = styled.div`
   color: white;
@@ -21,18 +24,9 @@ const SplashTitle = styled.div`
     font-size: 9.3vw;
   }
 `;
-const SplashSubTitle = styled.div`
-  color: white;
-  line-height: 1;
-  padding: 0.25em;
-  font-size: 4em;
-  font-weight: 400;
-  text-align: center;
-  padding: 0;
-
-  @media screen and (max-width: 1200px) {
-    font-size: 5.3vw;
-  }
+const CustomContainer = styled(Container)`
+  height: 500px;
+  width: 100%;
 `;
 const SplashImage = styled.div`
   width: 100vw;
@@ -85,13 +79,54 @@ const Paragraph = styled.div`
   }
 `;
 
+const CustomFooter = styled(Footer)`
+  
+`;
+
 export const Objects = ({
   title,
+  bild,
   description,
   fastigheter,
 }) => (
   <Container>
-    <SplashTitle>{title}</SplashTitle>
+    <SplashImage
+      url={!!bild.childImageSharp ? bild.childImageSharp.fluid.src : bild}
+    >
+      <div
+        style={{
+          display: "flex",
+          height: "150px",
+          lineHeight: "1",
+          justifyContent: "space-around",
+          alignItems: "left",
+          flexDirection: "column",
+        }}
+      >
+        <SplashTitle>{title}</SplashTitle>
+      </div>
+    </SplashImage>
+    {fastigheter.map((apartment, i) => {
+      return (
+        <CustomContainer style={{flexDirection: i % 2 === 0 ? 'row' : 'row-reverse', padding: "30px 60px 0 60px", maxWidth: "1200px", justifyContent: "center"}}>
+          <Container grey style={{height:"100%", width:"50%"}}>
+            <Text style={{fontSize:"2em", textAlign: "center", marginTop:"20px"}}>
+              {apartment.adress}
+            </Text>
+            <Container style={{padding: "0 30px"}}>
+              <Paragraphs paragraphs={apartment.beskrivning}  textStyle={{
+                      color: "white",
+                      fontSize: "1em",
+                      fontWeight: "400",
+                      paddingTop: "12px",
+                      textAlign: "left"
+                    }} />
+            </Container>
+          </Container>
+          <Image style={{height:"100%", width:"50%"}} url={!!apartment.bild.childImageSharp ? apartment.bild.childImageSharp.fluid.src : apartment.bild}/>
+        </CustomContainer>
+      )
+    })}
   </Container>
         
 );
@@ -99,6 +134,7 @@ export const Objects = ({
 Objects.propTypes = {
   title: PropTypes.string,
   description: PropTypes.string,
+  bild: PropTypes.object,
   fastigheter: PropTypes.array,
 };
 
@@ -109,9 +145,12 @@ const IndexPage = ({ data }) => {
       <Header />
       <Objects
         title={frontmatter.title}
+        bild={frontmatter.bild}
         description={frontmatter.description}
         fastigheter={frontmatter.fastigheter}
       />
+      <div style={{marginTop: "30px"}} />
+      <Footer />
     </Layout>
   );
 };

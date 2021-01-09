@@ -23,40 +23,42 @@ function scrollToRef(ref) {
   window.scrollTo(0, offsetTop);
 }
 
-export default ({ refs, isFastigheter = false }) => {
+export default ({ refs = {}, isFastigheter = false }) => {
   const { aboutRef, historyRef, contactRef } = refs;
   return (
     <Container
       row
       grey
       style={{
-        justifyContent: "space-between",
+        justifyContent: "center",
         textAlign: "center",
         padding: "15px",
       }}
     >
-      <Container row style={{ justifyContent: "center" }}>
+      {aboutRef ? <Container row style={{ justifyContent: "center" }}>
         <CustomText white onClick={() => scrollToRef(aboutRef)}>
           OM OSS
         </CustomText>
         <CustomText white onClick={() => scrollToRef(historyRef)}>
           VÅR HISTORIA
         </CustomText>
-      </Container>
+      </Container> :
+      <CustomText style={{ position:"absolute", left:"30px", top:"30px"}}><Link style={{color:"white"}} to="/fastigheter">{'<- Tillbaka'}</Link></CustomText>}
       <Link style={{ cursor: "pointer" }} to="/">
         <Title style={{ fontSize: "2.2em" }}>GEDIGET HANTVERK</Title>
         <Title style={{ fontSize: "1.5em", fontWeight: "700" }}>
           - SEDAN 1983
         </Title>
       </Link>
-      <Container row style={{ justifyContent: "center" }}>
+      {aboutRef && <Container row style={{ justifyContent: "center" }}>
         {window.location.pathname === "/fastigheter" && (
-          <CustomText white>VÅRA FASTIGHETER</CustomText>
+          
+          <CustomText white><Link style={{color:"white"}} to="/objekt">VÅRA FASTIGHETER</Link></CustomText>
         )}
         <CustomText white onClick={() => scrollToRef(contactRef)}>
           KONTAKT
         </CustomText>
-      </Container>
+      </Container>}
     </Container>
   );
 };

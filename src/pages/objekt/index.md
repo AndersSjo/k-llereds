@@ -1,4 +1,5 @@
 ---
+templateKey: objekt
 title: Våra fastigheter
 description: Vi äger ett antal fastigheter kring Göteborg.
 fastigheter:
@@ -18,14 +19,14 @@ fastigheter:
       - stycke: Fastigheten uppfördes 1988 och består av 3 st kontor & 1 st förråd i
           övre plan samt 2 st verkstäder och 1 st lager i bottenplan.
       - stycke: Kontor nr 1 är 70 m2 med tillhörande pentry, toalett och dusch.
-      - stycke: "Kontor nr 2 är på 38 m2 med tillhörande pentry, toalett och dusch. "
+      - stycke: 'Kontor nr 2 är på 38 m2 med tillhörande pentry, toalett och dusch. '
       - stycke: Förrådslokal på övre våning om 27 m2.
       - stycke: Kontor nr 3 är på 136 m2 med tillhörande pentry, toalett och dusch.
       - stycke: Lagerlokal nr 1 är på 137 m2.
       - stycke: Lagerlokal nr 2 är på 65 m2.
       - stycke: Lagerlokal nr 3 är på 72 m2.
   - bild: /img/be9f0d9a96d23c1fdcc52a035b6e7bac_a9b5421c633a58e77888ce34d2192d1b.jpg
-    adress: "Gamla Riksvägen 4 "
+    adress: 'Gamla Riksvägen 4 '
     beskrivning:
       - stycke: Fastigheten uppfördes 2010 och består av 2 st kontor och ett
           kontorshotell i övre plan samt 2 st butikslokaler och 2 st

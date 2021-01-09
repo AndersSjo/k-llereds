@@ -2,118 +2,48 @@ backend:
   name: git-gateway
   branch: master
   commit_messages:
-    create: "Create {{collection}} “{{slug}}”"
-    update: "Update {{collection}} “{{slug}}”"
-    delete: "Delete {{collection}} “{{slug}}”"
-    uploadMedia: "[skip ci] Upload “{{path}}”"
-    deleteMedia: "[skip ci] Delete “{{path}}”"
+    create: 'Create {{collection}} “{{slug}}”'
+    update: 'Update {{collection}} “{{slug}}”'
+    delete: 'Delete {{collection}} “{{slug}}”'
+    uploadMedia: '[skip ci] Upload “{{path}}”'
+    deleteMedia: '[skip ci] Delete “{{path}}”'
 
 media_folder: static/img
 public_folder: /img
 
 collections:
-  - name: "pages"
-    label: "Pages"
+  - name: 'pages'
+    label: 'Pages'
     files:
-      - file: "src/pages/objekt/index.md"
-        label: "Objekt"
-        name: "objekt"
+      - file: 'src/pages/objekt/index.md'
+        label: 'Objekt'
+        name: 'objekt'
         fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "objekt-page",
-            }
+          - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'objekt-page' }
           - { label: Title, name: title, widget: string }
           - { label: Description, name: description, widget: string }
+          - { label: Bild, name: bild, widget: image }
           - {
               label: Fastigheter,
               name: fastigheter,
-              widget: object,
+              widget: list,
               fields:
                 [
                   { label: Bild, name: bild, widget: image },
                   { label: Adress, name: adress, widget: string },
                   {
-                    label: "Beskrivning",
-                    name: "beskrivning",
+                    label: 'Beskrivning',
+                    name: 'beskrivning',
                     widget: list,
                     fields: [{ label: Stycke, name: stycke, widget: text }],
                   },
                 ],
             }
-          - {
-              label: Historia,
-              name: historia,
-              widget: object,
-              fields:
-                [
-                  { label: Rubrik, name: rubrik, widget: string },
-                  {
-                    label: Text,
-                    name: text,
-                    widget: list,
-                    fields: [{ label: Stycke, name: stycke, widget: text }],
-                  },
-                  { label: Bild, name: bild, widget: image },
-                ],
-            }
-          - {
-              label: Personser,
-              name: personer,
-              widget: object,
-              fields:
-                [
-                  { label: Rubrik, name: rubrik, widget: string },
-                  {
-                    label: Text,
-                    name: text,
-                    widget: list,
-                    fields: [{ label: Stycke, name: stycke, widget: text }],
-                  },
-                  {
-                    label: Bild,
-                    name: bild,
-                    widget: list,
-                    fields:
-                      [
-                        { label: Namn, name: namn, widget: text },
-                        { label: Titel, name: titel, widget: text },
-                        { label: Telefon, name: telefon, widget: text },
-                        { label: Fax, name: fax, widget: text },
-                        { label: Mail, name: mail, widget: text },
-                        { label: Bild, name: bild, widget: image },
-                      ],
-                  },
-                ],
-            }
-          - {
-              label: Kontakt,
-              name: kontakt,
-              widget: object,
-              fields:
-                [
-                  { label: Rubrik, name: rubrik, widget: string },
-                  {
-                    label: Text,
-                    name: text,
-                    widget: list,
-                    fields: [{ label: Stycke, name: stycke, widget: text }],
-                  },
-                  { label: Bild, name: bild, widget: image },
-                ],
-            }
-      - file: "src/pages/byggservice/index.md"
-        label: "Byggservice"
-        name: "byggservice"
+      - file: 'src/pages/byggservice/index.md'
+        label: 'Byggservice'
+        name: 'byggservice'
         fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "byggservice-page",
-            }
+          - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'byggservice-page' }
           - { label: Title, name: title, widget: string }
           - { label: Image, name: image, widget: image }
           - { label: Heading, name: heading, widget: string }
@@ -127,8 +57,8 @@ collections:
                   { label: Title, name: title, widget: string },
                   { label: Description, name: description, widget: text },
                   {
-                    label: "Beskrivning",
-                    name: "beskrivning",
+                    label: 'Beskrivning',
+                    name: 'beskrivning',
                     widget: list,
                     fields: [{ label: Stycke, name: stycke, widget: text }],
                   },
@@ -141,12 +71,7 @@ collections:
               fields:
                 [
                   { label: Rubrik, name: rubrik, widget: string },
-                  {
-                    label: Text,
-                    name: text,
-                    widget: list,
-                    fields: [{ label: Stycke, name: stycke, widget: text }],
-                  },
+                  { label: Text, name: text, widget: list, fields: [{ label: Stycke, name: stycke, widget: text }] },
                   { label: Bild, name: bild, widget: image },
                 ],
             }
@@ -157,12 +82,7 @@ collections:
               fields:
                 [
                   { label: Rubrik, name: rubrik, widget: string },
-                  {
-                    label: Text,
-                    name: text,
-                    widget: list,
-                    fields: [{ label: Stycke, name: stycke, widget: text }],
-                  },
+                  { label: Text, name: text, widget: list, fields: [{ label: Stycke, name: stycke, widget: text }] },
                   {
                     label: Bild,
                     name: bild,
@@ -186,25 +106,15 @@ collections:
               fields:
                 [
                   { label: Rubrik, name: rubrik, widget: string },
-                  {
-                    label: Text,
-                    name: text,
-                    widget: list,
-                    fields: [{ label: Stycke, name: stycke, widget: text }],
-                  },
+                  { label: Text, name: text, widget: list, fields: [{ label: Stycke, name: stycke, widget: text }] },
                   { label: Bild, name: bild, widget: image },
                 ],
             }
-      - file: "src/pages/bygg/index.md"
-        label: "Bygg"
-        name: "bygg"
+      - file: 'src/pages/bygg/index.md'
+        label: 'Bygg'
+        name: 'bygg'
         fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "bygg-page",
-            }
+          - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'bygg-page' }
           - { label: Title, name: title, widget: string }
           - { label: Image, name: image, widget: image }
           - { label: Heading, name: heading, widget: string }
@@ -218,8 +128,8 @@ collections:
                   { label: Title, name: title, widget: string },
                   { label: Description, name: description, widget: text },
                   {
-                    label: "Beskrivning",
-                    name: "beskrivning",
+                    label: 'Beskrivning',
+                    name: 'beskrivning',
                     widget: list,
                     fields: [{ label: Stycke, name: stycke, widget: text }],
                   },
@@ -232,12 +142,7 @@ collections:
               fields:
                 [
                   { label: Rubrik, name: rubrik, widget: string },
-                  {
-                    label: Text,
-                    name: text,
-                    widget: list,
-                    fields: [{ label: Stycke, name: stycke, widget: text }],
-                  },
+                  { label: Text, name: text, widget: list, fields: [{ label: Stycke, name: stycke, widget: text }] },
                   { label: Bild, name: bild, widget: image },
                 ],
             }
@@ -248,12 +153,7 @@ collections:
               fields:
                 [
                   { label: Rubrik, name: rubrik, widget: string },
-                  {
-                    label: Text,
-                    name: text,
-                    widget: list,
-                    fields: [{ label: Stycke, name: stycke, widget: text }],
-                  },
+                  { label: Text, name: text, widget: list, fields: [{ label: Stycke, name: stycke, widget: text }] },
                   {
                     label: Bild,
                     name: bild,
@@ -277,25 +177,15 @@ collections:
               fields:
                 [
                   { label: Rubrik, name: rubrik, widget: string },
-                  {
-                    label: Text,
-                    name: text,
-                    widget: list,
-                    fields: [{ label: Stycke, name: stycke, widget: text }],
-                  },
+                  { label: Text, name: text, widget: list, fields: [{ label: Stycke, name: stycke, widget: text }] },
                   { label: Bild, name: bild, widget: image },
                 ],
             }
-      - file: "src/pages/fastigheter/index.md"
-        label: "Fastigheter"
-        name: "fastigheter"
+      - file: 'src/pages/fastigheter/index.md'
+        label: 'Fastigheter'
+        name: 'fastigheter'
         fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "fastigheter-page",
-            }
+          - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'fastigheter-page' }
           - { label: Title, name: title, widget: string }
           - { label: Image, name: image, widget: image }
           - { label: Heading, name: heading, widget: string }
@@ -309,8 +199,8 @@ collections:
                   { label: Title, name: title, widget: string },
                   { label: Description, name: description, widget: text },
                   {
-                    label: "Beskrivning",
-                    name: "beskrivning",
+                    label: 'Beskrivning',
+                    name: 'beskrivning',
                     widget: list,
                     fields: [{ label: Stycke, name: stycke, widget: text }],
                   },
@@ -323,12 +213,7 @@ collections:
               fields:
                 [
                   { label: Rubrik, name: rubrik, widget: string },
-                  {
-                    label: Text,
-                    name: text,
-                    widget: list,
-                    fields: [{ label: Stycke, name: stycke, widget: text }],
-                  },
+                  { label: Text, name: text, widget: list, fields: [{ label: Stycke, name: stycke, widget: text }] },
                   { label: Bild, name: bild, widget: image },
                 ],
             }
@@ -339,12 +224,7 @@ collections:
               fields:
                 [
                   { label: Rubrik, name: rubrik, widget: string },
-                  {
-                    label: Text,
-                    name: text,
-                    widget: list,
-                    fields: [{ label: Stycke, name: stycke, widget: text }],
-                  },
+                  { label: Text, name: text, widget: list, fields: [{ label: Stycke, name: stycke, widget: text }] },
                   {
                     label: Bild,
                     name: bild,
@@ -368,86 +248,49 @@ collections:
               fields:
                 [
                   { label: Rubrik, name: rubrik, widget: string },
-                  {
-                    label: Text,
-                    name: text,
-                    widget: list,
-                    fields: [{ label: Stycke, name: stycke, widget: text }],
-                  },
+                  { label: Text, name: text, widget: list, fields: [{ label: Stycke, name: stycke, widget: text }] },
                   { label: Bild, name: bild, widget: image },
                 ],
             }
-      - file: "src/pages/index.md"
-        label: "Startsida"
-        name: "startsida"
+      - file: 'src/pages/index.md'
+        label: 'Startsida'
+        name: 'startsida'
         fields:
+          - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'startsida-page' }
+          - { label: 'Rubrik', name: 'rubrik', widget: 'string' }
+          - { label: 'Underrubrik', name: 'underrubrik', widget: 'string' }
           - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "startsida-page",
-            }
-          - { label: "Rubrik", name: "rubrik", widget: "string" }
-          - { label: "Underrubrik", name: "underrubrik", widget: "string" }
-          - {
-              label: "Vänster",
-              name: "venster",
+              label: 'Vänster',
+              name: 'venster',
               widget: object,
-              fields:
-                [
-                  { label: Image, name: image, widget: image },
-                  { label: Text, name: text, widget: string },
-                ],
+              fields: [{ label: Image, name: image, widget: image }, { label: Text, name: text, widget: string }],
             }
           - {
-              label: "Center",
-              name: "center",
+              label: 'Center',
+              name: 'center',
               widget: object,
-              fields:
-                [
-                  { label: Image, name: image, widget: image },
-                  { label: Text, name: text, widget: string },
-                ],
+              fields: [{ label: Image, name: image, widget: image }, { label: Text, name: text, widget: string }],
             }
           - {
-              label: "Höger",
-              name: "hoger",
+              label: 'Höger',
+              name: 'hoger',
               widget: object,
-              fields:
-                [
-                  { label: Image, name: image, widget: image },
-                  { label: Text, name: text, widget: string },
-                ],
+              fields: [{ label: Image, name: image, widget: image }, { label: Text, name: text, widget: string }],
             }
 
-  - name: "components"
-    label: "Components"
+  - name: 'components'
+    label: 'Components'
     files:
-      - file: "src/pages/footer/index.md"
-        label: "Footer"
-        name: "footer"
+      - file: 'src/pages/footer/index.md'
+        label: 'Footer'
+        name: 'footer'
         fields:
-          - {
-              label: "Template Key",
-              name: "templateKey",
-              widget: "hidden",
-              default: "footer",
-            }
-          - {
-              label: "Vänster",
-              name: "ven",
-              widget: list,
-              fields: [{ label: Stycke, name: stycke, widget: text }],
-            }
-          - {
-              label: "Höger",
-              name: "hog",
-              widget: list,
-              fields: [{ label: Stycke, name: stycke, widget: text }],
-            }
-      - file: "src/pages/contact/index.md"
-        label: "Kontakt"
-        name: "kontakt"
+          - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'footer' }
+          - { label: 'Vänster', name: 'ven', widget: list, fields: [{ label: Stycke, name: stycke, widget: text }] }
+          - { label: 'Höger', name: 'hog', widget: list, fields: [{ label: Stycke, name: stycke, widget: text }] }
+      - file: 'src/pages/contact/index.md'
+        label: 'Kontakt'
+        name: 'kontakt'
         fields:
           - {
               label: Kontakt,
@@ -456,12 +299,7 @@ collections:
               fields:
                 [
                   { label: Rubrik, name: rubrik, widget: string },
-                  {
-                    label: Text,
-                    name: text,
-                    widget: list,
-                    fields: [{ label: Stycke, name: stycke, widget: text }],
-                  },
+                  { label: Text, name: text, widget: list, fields: [{ label: Stycke, name: stycke, widget: text }] },
                   { label: Bild, name: bild, widget: image },
                 ],
             }

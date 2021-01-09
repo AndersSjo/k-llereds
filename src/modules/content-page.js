@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef } from "react";
 import styled from "styled-components";
 import Container from "../components/Container";
 import Image from "../components/Image";
@@ -118,80 +118,87 @@ export default ({
   description,
   kontakt,
   personer,
-}) => (
-  <div>
-    <Header />
-    <SplashImage
-      url={!!image.childImageSharp ? image.childImageSharp.fluid.src : image}
-    >
-      <div
-        style={{
-          display: "flex",
-          height: "150px",
-          lineHeight: "1",
-          justifyContent: "space-around",
-          alignItems: "left",
-          flexDirection: "column",
-        }}
+}) => {
+  const aboutRef = useRef(null);
+  const historyRef = useRef(null);
+  const contactRef = useRef(null);
+  return (
+    <div>
+      <Header refs={{ aboutRef, historyRef, contactRef }} />
+      <SplashImage
+        url={!!image.childImageSharp ? image.childImageSharp.fluid.src : image}
       >
-        <SplashTitle>{title}</SplashTitle>
-        <SplashSubTitle>{subheading}</SplashSubTitle>
-      </div>
-    </SplashImage>
-    <section className="section section--gradient">
-      <div className="container">
-        <div className="section">
-          <div className="columns">
-            <div className="column is-10 is-offset-1">
-              <div className="content">
+        <div
+          style={{
+            display: "flex",
+            height: "150px",
+            lineHeight: "1",
+            justifyContent: "space-around",
+            alignItems: "left",
+            flexDirection: "column",
+          }}
+        >
+          <SplashTitle>{title}</SplashTitle>
+          <SplashSubTitle>{subheading}</SplashSubTitle>
+        </div>
+      </SplashImage>
+      <section className="section section--gradient" ref={aboutRef}>
+        <div className="container">
+          <div className="section">
+            <div className="columns">
+              <div className="column is-10 is-offset-1">
                 <div className="content">
-                  <div className="tile">
-                    <Title className="title">{mainpitch.title}</Title>
+                  <div className="content">
+                    <div className="tile">
+                      <Title className="title">{mainpitch.title}</Title>
+                    </div>
+                    {mainpitch.beskrivning.map((stycke, i) => {
+                      return (
+                        <div className="tile" key={`${i}-desc`}>
+                          <Paragraph center>{stycke.stycke}</Paragraph>
+                        </div>
+                      );
+                    })}
                   </div>
-                  {mainpitch.beskrivning.map((stycke, i) => {
-                    return (
-                      <div className="tile" key={`${i}-desc`}>
-                        <Paragraph center>{stycke.stycke}</Paragraph>
-                      </div>
-                    );
-                  })}
                 </div>
               </div>
             </div>
           </div>
         </div>
+      </section>
+      <Container row style={{ minHeight: "800px" }} ref={historyRef}>
+        <CustomContainer grey>
+          <Title white style={{ textAlign: "left" }}>
+            {historia.rubrik}
+          </Title>
+          <Text>
+            <Paragraphs
+              paragraphs={historia.text}
+              textStyle={{
+                color: "white",
+                fontSize: "1em",
+                textAlign: "left",
+                fontWeight: "400",
+                lineHeight: "30px",
+                letterSpacing: "1.5px",
+              }}
+            />
+          </Text>
+        </CustomContainer>
+        <CustomImage
+          url={
+            !!historia.bild.childImageSharp
+              ? historia.bild.childImageSharp.fluid.src
+              : historia.bild
+          }
+          style={{ width: "50%" }}
+        />
+      </Container>
+      <Persons persons={personer} />
+      <div ref={contactRef}>
+        <Contact contact={kontakt} />
       </div>
-    </section>
-    <Container row style={{ minHeight: "800px" }}>
-      <CustomContainer grey>
-        <Title white style={{ textAlign: "left" }}>
-          {historia.rubrik}
-        </Title>
-        <Text>
-          <Paragraphs
-            paragraphs={historia.text}
-            textStyle={{
-              color: "white",
-              fontSize: "1em",
-              textAlign: "left",
-              fontWeight: "400",
-              lineHeight: "30px",
-              letterSpacing: "1.5px",
-            }}
-          />
-        </Text>
-      </CustomContainer>
-      <CustomImage
-        url={
-          !!historia.bild.childImageSharp
-            ? historia.bild.childImageSharp.fluid.src
-            : historia.bild
-        }
-        style={{ width: "50%" }}
-      />
-    </Container>
-    <Persons persons={personer} />
-    <Contact contact={kontakt} />
-    <Footer />
-  </div>
-);
+      <Footer />
+    </div>
+  );
+};

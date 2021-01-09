@@ -24,7 +24,6 @@ function scrollToRef(ref) {
 }
 
 const isRealEstate = () => {
-  console.log('IS REAL ESTATE', window.location.pathname)
   if(typeof window !== `undefined`) {
     return window?.location?.pathname === "/fastigheter"
   }

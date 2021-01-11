@@ -39,6 +39,17 @@ collections:
                   },
                 ],
             }
+      - file: 'src/pages/files/index.md'
+        label: 'FileCollection'
+        name: 'fileCollection'
+        fields:
+          - { label: 'Template Key', name: 'templateKey', widget: 'hidden', default: 'files' }
+          - {
+              label: Files,
+              name: files,
+              widget: list,
+              fields: [{ label: File, name: file, widget: file, default: '/files' }],
+            }
       - file: 'src/pages/byggservice/index.md'
         label: 'Byggservice'
         name: 'byggservice'

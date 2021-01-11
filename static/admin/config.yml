@@ -9,6 +9,10 @@ backend:
     deleteMedia: '[skip ci] Delete “{{path}}”'
 
 media_folder: static/img
+media_library:
+  name: uploadcare
+  config:
+    publicKey: e319d800c13855b2bb70
 public_folder: /img
 
 collections:

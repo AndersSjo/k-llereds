@@ -90,7 +90,7 @@ export const Files = ({
   <Container>
     {files.map(({file}) => {
       return (
-        <a href={file.absolutePath} download>{file.base}</a>
+        <a href={file} download>{file}</a>
       )
     })}
   </Container>
@@ -130,12 +130,7 @@ export const pageQuery = graphql`
     markdownRemark(frontmatter: {templateKey: {eq: "files"}}) {
       frontmatter {
         files {
-          file {
-            absolutePath
-            base
-            relativePath
-            relativeDirectory
-          }
+          file 
         }
       }
     }

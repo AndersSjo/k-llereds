@@ -59,7 +59,9 @@ export default class Contact extends React.Component {
 
   componentDidMount() {
     console.log("getting that");
-    axios.get("/.netlify/functions/hello?password=Klr3d5ByGg").then(console.log)
+    axios.get("/.netlify/functions/hello?password=Klr3d5ByGg").then(({data}) => {
+      if (data.url && typeof window !== undefined) window.location.assign(`/${data.url}`);
+    })
   }
 
   handleChange = (e) => {

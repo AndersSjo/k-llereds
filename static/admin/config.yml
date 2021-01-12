@@ -50,7 +50,7 @@ collections:
                   },
                 ],
             }
-      - file: "src/pages/files/index.md"
+      - file: "src/pages/0128ALDJCkdjf902scxmz9jdd3/index.md"
         label: "FileCollection"
         name: "fileCollection"
         fields:

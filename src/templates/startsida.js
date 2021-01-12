@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Link, graphql } from "gatsby";
 import styled from "styled-components";
+import Login from "../modules/Login";
 import Button from "../components/Button";
 import Image from "../components/Image";
 import Title from "../components/Title";
@@ -107,6 +108,7 @@ export const StartpageTemplate = ({
           <Link to="/bygg">
             <CustomButton yellow>LÄS MER</CustomButton>
           </Link>
+          <Login style={{ position: "absolute", bottom: "50px" }} />
         </ImageSection>
         <ImageSection
           url={

@@ -6,7 +6,7 @@ module.exports.handler = async function(event, context) {
     // return null to show no errors
     statusCode: 200, // http status code
     body: JSON.stringify({
-      url: password === 'Klr3d5ByGg' ? "0128ALDJCkdjf902scxmz9jdd3" : false;
+      url: password === 'Klr3d5ByGg' ? "0128ALDJCkdjf902scxmz9jdd3" : false
     })
   }
 }

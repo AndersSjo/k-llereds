@@ -1,5 +1,6 @@
 import React from "react";
 import { navigate } from "gatsby-link";
+import axios from "axios";
 import Layout from "../components/Layout";
 import Container from "../components/Container";
 import Text from "../components/Text";
@@ -58,7 +59,7 @@ export default class Contact extends React.Component {
 
   componentDidMount() {
     console.log("getting that");
-    fetch("/.netlify/functions/hello").then(console.log);
+    axios.get("/.netlify/functions/hello").then(console.log)
   }
 
   handleChange = (e) => {

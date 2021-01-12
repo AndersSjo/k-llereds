@@ -29,11 +29,11 @@ const CustomContainer = styled(Container)`
   width: 100%;
   flex-direction: row;
   padding: 30px 60px 0 60px;
-  maxWidth: 1200px;
-  justifyContent: center;
+  maxwidth: 1200px;
+  justifycontent: center;
   :nth-of-type(odd) {
     flex-direction: row-reverse;
-    
+
     @media screen and (max-width: 900px) {
       flex-direction: column-reverse;
     }
@@ -82,12 +82,7 @@ const ApartmentImage = styled(Image)`
   }
 `;
 
-export const Objects = ({
-  title,
-  bild,
-  description,
-  fastigheter,
-}) => (
+export const Objects = ({ title, bild, description, fastigheter }) => (
   <Container>
     <SplashImage
       url={!!bild.childImageSharp ? bild.childImageSharp.fluid.src : bild}
@@ -108,26 +103,40 @@ export const Objects = ({
     {fastigheter.map((apartment, i) => {
       return (
         <CustomContainer>
-          <ApartmentInformation grey >
-            <Text style={{fontSize:"2em", textAlign: "center", marginTop:"20px"}}>
+          <ApartmentInformation grey>
+            <Text
+              style={{
+                fontSize: "2em",
+                textAlign: "center",
+                marginTop: "20px",
+              }}
+            >
               {apartment.adress}
             </Text>
-            <Container style={{padding: "0 30px"}}>
-              <Paragraphs paragraphs={apartment.beskrivning}  textStyle={{
-                      color: "white",
-                      fontSize: "1em",
-                      fontWeight: "400",
-                      paddingTop: "12px",
-                      textAlign: "left"
-                    }} />
+            <Container style={{ padding: "0 30px" }}>
+              <Paragraphs
+                paragraphs={apartment.beskrivning}
+                textStyle={{
+                  color: "white",
+                  fontSize: "1em",
+                  fontWeight: "400",
+                  paddingTop: "12px",
+                  textAlign: "left",
+                }}
+              />
             </Container>
           </ApartmentInformation>
-          <ApartmentImage url={!!apartment.bild.childImageSharp ? apartment.bild.childImageSharp.fluid.src : apartment.bild}/>
+          <ApartmentImage
+            url={
+              !!apartment.bild.childImageSharp
+                ? apartment.bild.childImageSharp.fluid.src
+                : apartment.bild
+            }
+          />
         </CustomContainer>
-      )
+      );
     })}
   </Container>
-        
 );
 
 Objects.propTypes = {
@@ -141,14 +150,14 @@ const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
   return (
     <Layout>
-      <Header />
+      <Header to="fastigheter" />
       <Objects
         title={frontmatter.title}
         bild={frontmatter.bild}
         description={frontmatter.description}
         fastigheter={frontmatter.fastigheter}
       />
-      <div style={{marginTop: "30px"}} />
+      <div style={{ marginTop: "30px" }} />
       <Footer />
     </Layout>
   );

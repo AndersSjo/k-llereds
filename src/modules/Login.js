@@ -12,6 +12,7 @@ class Login extends React.Component {
     this.state = {
       clicked: false,
       password: "",
+      failedPassword: false,
     };
   }
 
@@ -29,8 +30,13 @@ class Login extends React.Component {
       .get(`/.netlify/functions/hello?password=${this.state.password}`)
       .then(({ data }) => {
         console.log(data);
+        console.log(data.url && typeof window !== undefined);
         if (data.url && typeof window !== undefined)
           window.location.assign(`/${data.url}`);
+        else {
+          console.log("wrong");
+          this.setState({ failedPassword: true });
+        }
       });
     event.preventDefault();
   };
@@ -40,17 +46,22 @@ class Login extends React.Component {
     return (
       <div style={style} onClick={this.onClick}>
         {this.state.clicked ? (
-          <form onSubmit={this.handleSubmit}>
-            <label>
-              Lösenord:
-              <input
-                type="password"
-                value={this.state.password}
-                onChange={this.handleChange}
-              ></input>
-            </label>
-            <input type="submit" value="Submit" />
-          </form>
+          <div>
+            {this.state.failedPassword && (
+              <div style={{ color: "red" }}>Fel lösenord angivet.</div>
+            )}
+            <form onSubmit={this.handleSubmit}>
+              <label>
+                Lösenord:
+                <input
+                  type="password"
+                  value={this.state.password}
+                  onChange={this.handleChange}
+                ></input>
+              </label>
+              <input type="submit" value="OK" />
+            </form>
+          </div>
         ) : (
           "Logga in"
         )}

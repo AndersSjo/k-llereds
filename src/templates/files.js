@@ -108,7 +108,7 @@ const IndexPage = ({ data }) => {
     <Layout>
       <Header />
       <Files files={frontmatter.files} />
-      <div style={{ marginTop: "30px" }} />
+      <div style={{ marginTop: "30px", minHeight: "50vh" }} />
       <Footer />
     </Layout>
   );

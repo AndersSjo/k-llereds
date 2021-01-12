@@ -108,7 +108,17 @@ export const StartpageTemplate = ({
           <Link to="/bygg">
             <CustomButton yellow>LÄS MER</CustomButton>
           </Link>
-          <Login style={{ position: "absolute", bottom: "50px" }} />
+          <Login
+            style={{
+              position: "absolute",
+              bottom: "50px",
+              background: "rgb(235, 237, 240)",
+              padding: "5px",
+              boxShadow: "2px 2px 7px 0px rgba(50, 50, 50, 0.41)",
+              border: "1px solid rgb(196, 196, 196)",
+              borderRadius: "7px",
+            }}
+          />
         </ImageSection>
         <ImageSection
           url={

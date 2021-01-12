@@ -1,11 +1,9 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Link, graphql } from "gatsby";
+import { graphql } from "gatsby";
 import styled from "styled-components";
 
 import Layout from "../components/Layout";
-import Features from "../components/Features";
-import BlogRoll from "../components/BlogRoll";
 
 const SplashTitle = styled.div`
   color: white;
@@ -84,15 +82,7 @@ const Paragraph = styled.div`
   }
 `;
 
-export const IndexPageTemplate3 = ({
-  image,
-  title,
-  heading,
-  subheading,
-  mainpitch,
-  historia,
-  description,
-}) => (
+export const IndexPageTemplate3 = ({ image, title, subheading, mainpitch }) => (
   <div>
     <SplashImage
       url={!!image.childImageSharp ? image.childImageSharp.fluid.src : image}
@@ -150,7 +140,6 @@ IndexPageTemplate3.propTypes = {
 
 const IndexPage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
-  console.log("data", frontmatter.historia);
   return (
     <Layout>
       <IndexPageTemplate3

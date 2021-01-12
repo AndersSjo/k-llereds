@@ -408,23 +408,3 @@ collections:
               widget: list,
               fields: [{ label: Stycke, name: stycke, widget: text }],
             }
-      - file: "src/pages/contact/index.md"
-        label: "Kontakt"
-        name: "kontakt"
-        fields:
-          - {
-              label: Kontakt,
-              name: kontakt,
-              widget: object,
-              fields:
-                [
-                  { label: Rubrik, name: rubrik, widget: string },
-                  {
-                    label: Text,
-                    name: text,
-                    widget: list,
-                    fields: [{ label: Stycke, name: stycke, widget: text }],
-                  },
-                  { label: Bild, name: bild, widget: image },
-                ],
-            }

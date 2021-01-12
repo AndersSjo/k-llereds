@@ -56,6 +56,11 @@ export default class Contact extends React.Component {
     this.state = { isValidated: false };
   }
 
+  componentDidMount() {
+    console.log("getting that");
+    fetch("/.netlify/functions/hello").then(console.log);
+  }
+
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };

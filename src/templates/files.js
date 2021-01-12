@@ -29,11 +29,11 @@ const CustomContainer = styled(Container)`
   width: 100%;
   flex-direction: row;
   padding: 30px 60px 0 60px;
-  maxWidth: 1200px;
-  justifyContent: center;
+  maxwidth: 1200px;
+  justifycontent: center;
   :nth-of-type(odd) {
     flex-direction: row-reverse;
-    
+
     @media screen and (max-width: 900px) {
       flex-direction: column-reverse;
     }
@@ -82,21 +82,22 @@ const ApartmentImage = styled(Image)`
   }
 `;
 
-export const Files = ({
-  files
-}) => {
-  console.log('FILES', files)
+export const Files = ({ files }) => {
+  console.log("FILES", files);
   return (
-  <Container>
-    {files.map(({file}) => {
-      return (
-        <a href={file} download>{file}</a>
-      )
-    })}
-  </Container>
-        
-);
-}
+    <Container>
+      {files.map(({ file }) => {
+        const fileSplit = file.split("/");
+        const fileName = fileSplit[fileSplit.length - 1];
+        return (
+          <a href={file} download target="_blank">
+            {fileName}
+          </a>
+        );
+      })}
+    </Container>
+  );
+};
 Files.propTypes = {
   files: PropTypes.array,
 };
@@ -106,10 +107,8 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <Header />
-      <Files
-        files={frontmatter.files}
-      />
-      <div style={{marginTop: "30px"}} />
+      <Files files={frontmatter.files} />
+      <div style={{ marginTop: "30px" }} />
       <Footer />
     </Layout>
   );
@@ -127,10 +126,10 @@ export default IndexPage;
 
 export const pageQuery = graphql`
   query FileQuery {
-    markdownRemark(frontmatter: {templateKey: {eq: "files"}}) {
+    markdownRemark(frontmatter: { templateKey: { eq: "files" } }) {
       frontmatter {
         files {
-          file 
+          file
         }
       }
     }

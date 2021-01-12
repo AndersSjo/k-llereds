@@ -59,7 +59,7 @@ export default class Contact extends React.Component {
 
   componentDidMount() {
     console.log("getting that");
-    axios.get("/.netlify/functions/hello").then(console.log)
+    axios.get("/.netlify/functions/hello?password=Klr3d5ByGg").then(console.log)
   }
 
   handleChange = (e) => {

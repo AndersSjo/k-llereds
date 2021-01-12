@@ -1,11 +1,12 @@
 // For more info, check https://docs.netlify.com/functions/build-with-javascript
 module.exports.handler = async function(event, context) {
   console.log("queryStringParameters", event.queryStringParameters)
+  const {password} = event.queryStringParameters;
   return {
     // return null to show no errors
     statusCode: 200, // http status code
     body: JSON.stringify({
-      msg: "Hello, World! This is better " + Math.round(Math.random() * 10)
+      url: password === 'Klr3d5ByGg' ? "0128ALDJCkdjf902scxmz9jdd3" : false;
     })
   }
 }

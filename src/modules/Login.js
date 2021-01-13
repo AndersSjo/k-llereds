@@ -49,12 +49,13 @@ class Login extends React.Component {
               <label>
                 Lösenord:
                 <input
+                  style={{ marginLeft: "5px" }}
                   type="password"
                   value={this.state.password}
                   onChange={this.handleChange}
                 ></input>
               </label>
-              <input type="submit" value="OK" />
+              <input type="submit" value="OK" style={{ marginLeft: "5px" }} />
             </form>
           </div>
         ) : (

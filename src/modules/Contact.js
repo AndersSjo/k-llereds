@@ -57,13 +57,6 @@ export default class Contact extends React.Component {
     this.state = { isValidated: false };
   }
 
-  componentDidMount() {
-    console.log("getting that");
-    axios.get("/.netlify/functions/hello?password=Klr3d5ByGg").then(({data}) => {
-      if (data.url && typeof window !== undefined) window.location.assign(`/${data.url}`);
-    })
-  }
-
   handleChange = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };

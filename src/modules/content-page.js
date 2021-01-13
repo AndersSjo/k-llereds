@@ -111,11 +111,9 @@ const CustomImage = styled(Image)`
 export default ({
   image,
   title,
-  heading,
   subheading,
   mainpitch,
   historia,
-  description,
   kontakt,
   personer,
 }) => {

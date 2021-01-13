@@ -1,5 +1,5 @@
 import React from "react";
-import { StaticQuery } from "gatsby";
+import { graphql, StaticQuery } from "gatsby";
 
 import Paragraphs from "./Paragraphs";
 import Container from "./Container";

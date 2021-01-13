@@ -1,10 +1,5 @@
 import React from "react";
 import axios from "axios";
-import Container from "../components/Container";
-import Text from "../components/Text";
-import Paragraphs from "../components/Paragraphs";
-import Image from "../components/Image";
-import styled from "styled-components";
 
 class Login extends React.Component {
   constructor(props) {

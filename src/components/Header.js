@@ -12,6 +12,19 @@ const CustomText = styled(Text)`
   margin: auto 15px;
   text-align: center;
   cursor: pointer;
+  @media screen and (max-width: 900px) {
+    display: none;
+    left: 0;
+    top: 10px;
+  }
+`;
+
+const CustomContainer = styled(Container)`
+  justify-content: center;
+  width: 20%;
+  @media screen and (max-width: 900px) {
+    width: 70%;
+  }
 `;
 
 const Back = styled(CustomText)`
@@ -19,6 +32,7 @@ const Back = styled(CustomText)`
   left: 30px;
   top: 30px;
   @media screen and (max-width: 900px) {
+    display: block;
     left: 0;
     top: 10px;
   }
@@ -75,9 +89,9 @@ export default ({ refs = {}, isFastigheter = false, to = "" }) => {
         </Title>
       </Link>
       {aboutRef && (
-        <Container row style={{ justifyContent: "center", width: "20%" }}>
+        <CustomContainer row>
           {isRealEstate() && (
-            <CustomText white>
+            <CustomText white style={{ display: "block" }}>
               <Link style={{ color: "white" }} to="/objekt">
                 VÅRA FASTIGHETER
               </Link>
@@ -86,7 +100,7 @@ export default ({ refs = {}, isFastigheter = false, to = "" }) => {
           <CustomText white onClick={() => scrollToRef(contactRef)}>
             KONTAKT
           </CustomText>
-        </Container>
+        </CustomContainer>
       )}
     </Container>
   );

@@ -39,11 +39,7 @@ const Back = styled(CustomText)`
 `;
 
 function scrollToRef(ref) {
-  console.log(ref);
-  console.log("clicked");
   const offsetTop = ref?.current?.offsetTop;
-  console.log(ref?.current);
-  console.log(offsetTop);
   window.scrollTo(0, offsetTop);
 }
 

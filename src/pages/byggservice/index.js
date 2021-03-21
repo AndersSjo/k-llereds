@@ -19,10 +19,10 @@ ContentPage.propTypes = {
 
 const ByggservicePage = ({ data }) => {
   const { frontmatter } = data.markdownRemark;
-  console.log("data", frontmatter);
   return (
     <Layout>
       <ContentPage
+        page="byggservice"
         image={frontmatter.image}
         title={frontmatter.title}
         heading={frontmatter.heading}

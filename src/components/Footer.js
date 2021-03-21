@@ -24,7 +24,6 @@ const Footer = class extends React.Component {
         `}
         render={(data) => {
           const { hog, ven } = data.markdownRemark.frontmatter;
-          console.log("DATA", hog, ven);
           return (
             <Container row grey style={{ padding: "150px 0 200px 0" }}>
               <Container>

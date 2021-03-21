@@ -109,6 +109,7 @@ const CustomImage = styled(Image)`
 `;
 
 export default ({
+  page,
   image,
   title,
   subheading,
@@ -194,7 +195,7 @@ export default ({
       </Container>
       <Persons persons={personer} />
       <div ref={contactRef}>
-        <Contact contact={kontakt} />
+        <Contact contact={kontakt} formName={page} />
       </div>
       <Footer />
     </div>

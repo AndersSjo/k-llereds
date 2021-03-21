@@ -12,7 +12,6 @@ class Login extends React.Component {
   }
 
   onClick = () => {
-    console.log("clicked");
     this.setState({ clicked: true });
   };
 
@@ -24,12 +23,9 @@ class Login extends React.Component {
     axios
       .get(`/.netlify/functions/hello?password=${this.state.password}`)
       .then(({ data }) => {
-        console.log(data);
-        console.log(data.url && typeof window !== undefined);
         if (data.url && typeof window !== undefined)
           window.location.assign(`/${data.url}`);
         else {
-          console.log("wrong");
           this.setState({ failedPassword: true });
         }
       });

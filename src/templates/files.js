@@ -8,7 +8,6 @@ import Container from "../components/Container";
 import Footer from "../components/Footer";
 
 export const Files = ({ files }) => {
-  console.log("FILES", files);
   return (
     <Container>
       {files.map(({ file }) => {

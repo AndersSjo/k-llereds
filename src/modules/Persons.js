@@ -39,7 +39,6 @@ const CustomContainer = styled(Container)`
 `;
 
 const Person = ({ person }) => {
-  console.log("person", person);
   return (
     <PersonContainer>
       <Image
@@ -64,7 +63,6 @@ const Person = ({ person }) => {
 };
 
 export default ({ persons }) => {
-  console.log("persons", persons);
   return (
     <CustomContainer light>
       <Title white>{persons.rubrik}</Title>

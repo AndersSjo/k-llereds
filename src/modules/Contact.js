@@ -1,6 +1,5 @@
 import React from "react";
 import { navigate } from "gatsby-link";
-import axios from "axios";
 import Layout from "../components/Layout";
 import Container from "../components/Container";
 import Text from "../components/Text";
@@ -113,7 +112,7 @@ export default class Contact extends React.Component {
               }}
             />
             <form
-              name="contact"
+              name={this.props.formName}
               method="post"
               action="/contact/thanks/"
               data-netlify="true"

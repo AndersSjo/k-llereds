@@ -25,7 +25,6 @@ const Paragraph = styled.div`
 
 const Paragraphs = ({ paragraphs, textStyle }) =>
   paragraphs.map((stycke, i) => {
-    console.log("STYCKE", stycke.stycke);
     return (
       <Paragraph key={i} center style={textStyle}>
         {stycke.stycke}
